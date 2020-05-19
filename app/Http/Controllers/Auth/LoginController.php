@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\LocalController;
+use Session;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -26,7 +30,14 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+   // protected $redirectTo = RouteServiceProvider::HOME;
+    public function redirectTo(){
+        Session::regenerate();
+        //$data = Session::getId();
+        $data = Auth::user();
+        session(['document' => $data->document]);
+        return route('home');
+    }
 
     /**
      * Create a new controller instance.

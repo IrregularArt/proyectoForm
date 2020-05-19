@@ -23,6 +23,7 @@
                         flex: 1 0 auto;
                     }
         </style>
+        @yield('links')
     </head>
     <body>
         <nav>
