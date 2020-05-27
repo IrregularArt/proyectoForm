@@ -1,5 +1,17 @@
 @extends('layouts.plantilla')
 
+@section('links')
+   
+@endsection
+
 @section('contenido')
-    <h1>editar</h1>
+    <div id='app'>
+        <Fotos-component></Fotos-component>
+    </div>
+        
+    
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/app.js')}}"
 @endsection
