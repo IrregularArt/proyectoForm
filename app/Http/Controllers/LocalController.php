@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Local;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LocalController extends Controller
 {
@@ -15,6 +16,12 @@ class LocalController extends Controller
     public function index()
     {
         //
+    }
+
+    /*      buscar si tiene ya un local creado                 */
+
+    public function buscarSiExisteLocal(){
+       
     }
 
     /**

@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\LocalController;
+use App\Local;
+use Illuminate\Support\Facades\Auth;
+
+use Session;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +29,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(Auth::check()){
+            $local = Local::where('document_user','=',session('document'))->get();
+            
+           if(count($local) != 0  ){
+                return view('hola');
+            }else{
+                return view('editarLocal');
+            }
+            
+            
+        }else{
+            return view('home');
+        }
     }
 }

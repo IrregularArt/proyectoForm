@@ -6,9 +6,9 @@
 
 <ul class="brand-logo center">
     <div class="input-field">
-        <i class="material-icons prefix">search</i>
-        <input id="icon_prefix" type="text" class="active">
-        <label for="icon_prefix" class="blue-text">¿Que deseas buscar?</label>
+       
+        <input id="icon_prefix" type="text" class="active form-control" placeholder="¿Que deseas buscar?">
+        
       </div>
     </ul>
 @endsection

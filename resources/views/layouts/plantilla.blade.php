@@ -7,10 +7,9 @@
         <title>@yield('titulo')</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}">
-        <script src="{{asset('js/materialize.min.js')}}"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+       
+   
 
         <style>
                     body {
@@ -23,46 +22,52 @@
                         flex: 1 0 auto;
                     }
         </style>
+        @yield('links')
     </head>
     <body>
-        <nav>
-        <div class="row">
-            <div class="nav-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a href="{{url('/')}}" style="margin-rigth: 8px;" class="navbar-brand">logo</a>
+            
                 @yield('nav')
-                <a href="{{url('/')}}" style="margin-rigth: 8px;" class="brand-logo left">logo</a>
-            <ul id="nav-mobile" class="right push-4 hide-on-med-and-down">
+                
+            <ul id="nav-mobile" class="ml-auto btn-group" role="group">
                 @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
+                            <li class="nav-item active">
+                                <a class="nav-link btn btn-warning" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Unete como vendedor') }}</a>
+                                    <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('Unete como vendedor') }}</a>
                                 </li>
                             @endif
                         @else
-                        <ul id="dropdown1" class="dropdown-content">
-                            <li><i class="material-icons prefix">arrow_back</i></li>
-                            <div class="divider"></div>
-                            <li><a href="{{ route('logout') }}"
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                            
+                        <li class="nav-item dropdown">
+                            <button class="nav-link dropdown-toggle btn-success" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                              document.getElementById('logout-form').submit();">
-                                 {{ __('cerrar sesion') }}
-                             </a></li>
-                          </ul>
-                            <li class="nav-item dropdown">
-                                <a class='dropdown-trigger' href='#' data-target='dropdown1'>{{ Auth::user()->name }} <span class="caret"></span></a>
-                                
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                
-                            </li>
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('cerrar sesion') }}
+                            </a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                          </li>
+                            
+                        
+                            
                         @endguest
                
             </ul>
-            </div>
-        </div>
+          
+      
         </nav>
 
 <!------------------------------------------------------------------------------>
@@ -99,13 +104,8 @@
         </footer>
 
 <!-------------------------------------------------------------------------------->
+<script src="{{asset('js/app.js')}}"></script>    
 @yield('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var option = {alignment : 'right'};
-    var instances = M.Dropdown.init(elems, option);
-  });
-</script>
+    
     </body>
 </html>
