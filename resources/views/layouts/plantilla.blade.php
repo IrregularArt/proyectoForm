@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
-        <script src="{{asset('js/app.js')}}"></script>
+       
    
 
         <style>
@@ -104,13 +104,8 @@
         </footer>
 
 <!-------------------------------------------------------------------------------->
+<script src="{{asset('js/app.js')}}"></script>    
 @yield('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var option = {alignment : 'right'};
-    var instances = M.Dropdown.init(elems, option);
-  });
-</script>
+    
     </body>
 </html>

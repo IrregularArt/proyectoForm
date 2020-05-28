@@ -27,6 +27,6 @@ Vue.component('fotos-component', require('./components/FotosComponent.vue').defa
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 const app = new Vue({
-    el: '#app'
+    el: '#modulo'
     
 });

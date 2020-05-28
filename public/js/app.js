@@ -1922,22 +1922,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      mensaje: 'hola vue!'
+      mensaje: 'hola vue!',
+      usuarios: null
     };
   },
   mounted: function mounted() {
     console.log('Component mounted.');
   },
-  cambiar: function cambiar() {
-    this.mensaje = "hola mundo";
+  methods: {
+    cambiarMensaje: function cambiarMensaje() {
+      var _this = this;
+
+      //this.mensaje = "cambio el mensaje el dia : "+new Date().toLocaleString()
+      axios.get('obtenerUsuarios').then(function (response) {
+        return _this.usuarios = response.data;
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    }
   }
 });
 
@@ -37486,23 +37492,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container", attrs: { id: "app" } }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("Example Component")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("span", [_vm._v(_vm._s(_vm.mensaje))]),
-            _vm._v(" "),
-            _c("button", { attrs: { onclick: "cambiar()" } }, [_vm._v("hola")])
-          ])
+  return _c(
+    "div",
+    [
+      _c("span", [_vm._v(_vm._s(_vm.mensaje))]),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", on: { click: _vm.cambiarMensaje } },
+        [_vm._v("click")]
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.usuarios, function(usuario) {
+        return _c("li", { key: usuario }, [
+          _vm._v("\n        " + _vm._s(usuario) + "\n    ")
         ])
-      ])
-    ])
-  ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49707,7 +49715,7 @@ Vue.component('fotos-component', __webpack_require__(/*! ./components/FotosCompo
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#modulo'
 });
 
 /***/ }),
