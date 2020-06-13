@@ -29,6 +29,7 @@ Route::get('obtenerUsuarios',function(){
     return $usuarios;
 });
 
+Route::put('registrarLocal', 'LocalController@store')->middleware('auth');
 /*Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/
