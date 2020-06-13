@@ -33,14 +33,14 @@ class HomeController extends Controller
             $local = Local::where('document_user','=',session('document'))->get();
             
            if(count($local) != 0  ){
-                return view('hola');
+                return view('home',compact('local'));
             }else{
                 return view('editarLocal');
             }
             
             
         }else{
-            return view('home');
+            return view('welcome');
         }
     }
 }

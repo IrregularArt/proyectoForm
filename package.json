@@ -24,6 +24,9 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "vue-cropperjs": "^4.1.0"
+        "google-maps-api-loader": "^1.1.1",
+        "vue-avatar-editor": "^1.0.4",
+        "vue-cropperjs": "^4.1.0",
+        "vue2-google-maps": "^0.10.7"
     }
 }

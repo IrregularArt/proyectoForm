@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Local;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\File;
+use Validator;
+use Illuminate\Validation\Rule;
 
 class LocalController extends Controller
 {
@@ -42,7 +46,31 @@ class LocalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validar
+        Validator::make($request->all(), [
+            'telefono' =>'required',
+            'whatsapp' => 'required',
+            'nombreLocal' => ['required',
+                            Rule::unique('locals', 'local_name')->ignore(session('document'), 'document_user') ],
+            'direccion' => ['required',
+                            Rule::unique('locals', 'address')->ignore(session('document'), 'document_user') ]
+        ])->validate();
+
+        //guardar imagen
+        $image = Image::make($request->get('imagenLocal'));
+        $nombre = session('document').'.png';
+        $image->save(public_path().'/localesImg/'.$nombre);
+    // guardar datos
+        $local = new Local();
+        $local->document_user = session('document');
+        $local->phone = $request->telefono;
+        $local->whatsapp = $request->whatsapp;
+        $local->address	= $request->direccion;
+        $local->other = $request->otros;
+        $local->local_name = $request->nombreLocal;
+        $local->local_img = $nombre;
+        $local->save();
+        return url('home');
     }
 
     /**
