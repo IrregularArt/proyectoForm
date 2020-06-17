@@ -22,6 +22,8 @@ window.Vue = require('vue');
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('fotos-component', require('./components/FotosComponent.vue').default);
 Vue.component('mapa-component', require('./components/MapaComponent.vue').default);
+Vue.component('datos-component', require('./components/DatosComponent.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

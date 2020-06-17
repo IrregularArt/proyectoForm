@@ -46,7 +46,7 @@
                         </form>
                             
                         <li class="nav-item dropdown">
-                            <button class="nav-link dropdown-toggle btn-success" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="nav-link dropdown-toggle btn btn-success" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -55,7 +55,7 @@
                                             document.getElementById('logout-form').submit();">
                                 {{ __('cerrar sesion') }}
                             </a>
-                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="/home">Ver mi local</a>
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item" href="#">Something else here</a>
                             </div>

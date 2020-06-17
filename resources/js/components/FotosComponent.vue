@@ -50,10 +50,10 @@ export default {
             cargarFoto(){
                 if(document.getElementById('cc')){
                     var imagenTraida = "localesImg/"+document.getElementById('cc').value;
-                    console.log(imagenTraida);
-                    console.log("////////////////////////////////////////");
+                   // console.log(imagenTraida);
+                   // console.log("////////////////////////////////////////");
                     var vueava = this.$refs.vueavatar;
-                    console.log(vueava);
+                    //console.log(vueava);
                     this.$refs.vueavatar.loadImage(imagenTraida);
                 }
             },
@@ -65,7 +65,7 @@ export default {
                 var img = this.$refs.vueavatar.getImageScaled()
                 // use img
                 var imagenFinal = img.toDataURL();
-                console.log(imagenFinal);
+                //console.log(imagenFinal);
                 document.getElementById('imagenLocal').value = imagenFinal;
             },
             onImageReady(scale){

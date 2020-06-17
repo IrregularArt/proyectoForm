@@ -104,7 +104,11 @@ class LocalController extends Controller
      */
     public function update(Request $request, Local $local)
     {
-        //
+        Local::where('id', '=', $request->datos['id'])
+            ->update(['phone' => $request->datos['phone'], 'local_name' => $request->datos['local_name'],
+            'whatsapp' => $request->datos['whatsapp'], 'address' => $request->datos['address'], 
+            'other' => $request->datos['other']]);
+        return "completado";
     }
 
     /**

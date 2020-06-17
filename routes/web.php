@@ -30,6 +30,11 @@ Route::get('obtenerUsuarios',function(){
 });
 
 Route::put('registrarLocal', 'LocalController@store')->middleware('auth');
+
+//actulizar datos del local
+
+Route::post('actualizarDatos', 'LocalController@update');
+
 /*Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/
