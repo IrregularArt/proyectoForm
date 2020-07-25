@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
        
    
 
@@ -25,19 +26,19 @@
         @yield('links')
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a href="{{url('/')}}" style="margin-rigth: 8px;" class="navbar-brand">logo</a>
+        <nav class="navbar navbar-expand-lg " id="navbarprin">
+            <a href="{{url('/')}}" style="margin-rigth: 8px; color: white; font-size: 30px;" class="navbar-brand">MARKET PLACE</a>
             
                 @yield('nav')
                 
-            <ul id="nav-mobile" class="ml-auto btn-group" role="group">
+            <ul id="nav-mobile" class="ml-auto btn-group" role="group" style="list-style: none;">
                 @guest
                             <li class="nav-item active">
-                                <a class="nav-link btn btn-warning" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
+                                <a class="nav-link btn btn-success" style="margin-right: 2vw;" href="{{ route('login') }}">{{ __('Iniciar sesion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('Unete como vendedor') }}</a>
+                                    <a class="nav-link btn btn-warning" href="{{ route('register') }}">{{ __('Unete como vendedor') }}</a>
                                 </li>
                             @endif
                         @else
@@ -77,28 +78,30 @@
     </div>
 
     <!------------------------------------------------------------------------->
-        <footer class="page-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Footer Content</h5>
-                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                    </div>
-                    <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Links</h5>
-                        <ul>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                        </ul>
-                    </div>
+        <footer class="page-footer" style="background-color: darkseagreen;height: 14vh;">
+            <div class="row" style="margin-right: 0;">
+                <div class="col l4 s12">
+                    <h1 class="white-text" style="text-align: center; margin-top: 4vh;">Contactanos:</h1>
                 </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+
+                <div class="col l2 s6" style="display: inline-flex;">
+                    <i><img src="{{asset('img/phone.png')}}" style="width: 40px;margin-top: 5vh;"></i>
+                    <h2 class="white-text" style="margin-top: 5vh;">3103457886</h2>
+                </div>
+
+                <div class="col l2 s6" style="display: inline-flex;">
+                    <i><img src="{{asset('img/facebook.png')}}" style="width: 40px;margin-top: 5vh;"></i>
+                    <h2 class="white-text" style="margin-top: 5vh;">MarketIbague</h2>
+                </div>
+
+                <div class="col l2 s6" style="display: inline-flex;">
+                    <i><img src="{{asset('img/instagram.png')}}" style="width: 40px;margin-top: 5vh;"></i>
+                    <h2 class="white-text" style="margin-top: 5vh;">MarketIbague</h2>
+                </div>
+
+                <div class="col l2 s6" style="display: inline-flex;">
+                    <i><img src="{{asset('img/whatsapp.png')}}" style="width: 40px;margin-top: 5vh;"></i>
+                    <h2 class="white-text" style="margin-top: 5vh;">MarketIbague</h2>
                 </div>
             </div>
         </footer>

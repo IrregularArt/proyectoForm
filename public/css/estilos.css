@@ -5,3 +5,14 @@
 canvas{
     width: 250px !important;
 }
+
+#navbarprin{
+    background: url(../img/navbar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+#divimglog{
+    background: url(../img/login.jpg);
+}
