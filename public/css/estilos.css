@@ -16,3 +16,8 @@ canvas{
 #divimglog{
     background: url(../img/login.jpg);
 }
+#divimgreg{
+    background: url(../img/register.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

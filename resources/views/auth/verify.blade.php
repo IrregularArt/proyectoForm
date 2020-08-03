@@ -5,20 +5,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+                <div style="text-align: center; font-size: 30px;" class="card-header">{{ __('Verifica tu direccion de correo electronico') }}</div>
 
-                <div class="card-body">
-                    @if (session('resent'))
+                <div class="card-body" style="font-size: 20px;">
+                    <!--@if (session('resent'))-->
                         <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                            {{ __('Un link de verificacion ha sido enviado a tu direccion de telefono.') }}
                         </div>
-                    @endif
+                    <!--@endif-->
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                    {{ __('Antes de proceder, por favor mira tu correo electronico para el link de verificacion.') }}
+                    {{ __('Si no has recibido el correo') }},
+                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }} ">
+                    <!--   -> ESTA LINEA VA EN LA LINEA DE ARRIBA, EN EL FORM, SOLO LA QUITE PARA PODER ENTRAR -->
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button style="font-size: 20px;" type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('Click aqui para recibir otro') }}</button>.
                     </form>
                 </div>
             </div>
