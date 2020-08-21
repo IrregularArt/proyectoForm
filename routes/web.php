@@ -31,9 +31,15 @@ Route::get('obtenerUsuarios',function(){
 
 Route::put('registrarLocal', 'LocalController@store')->middleware('auth');
 
-//actulizar datos del local
+//actualizar datos del local
 
 Route::post('actualizarDatos', 'LocalController@update');
+Route::post('/actualizarImagenLocal', 'LocalController@updateImg');
+//Productos
+Route::post('/guardarProducto', 'ProductController@store')->middleware('auth');
+Route::get('/obtenerGaleria/{id}', 'ProductController@show')->middleware('auth');
+Route::post('/eliminarProducto', 'ProductController@destroy')->middleware('auth');
+Route::post('/actualizarProducto', 'ProductController@update')->middleware('auth');
 
 /*Auth::routes();
 

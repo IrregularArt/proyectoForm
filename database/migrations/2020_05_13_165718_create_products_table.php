@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->string('product_description', 500);
             $table->string('product_image');
+            $table->text('tags');
             $table->timestamps();
             $table->foreign('id_local')->references('id')->on('locals');
         });

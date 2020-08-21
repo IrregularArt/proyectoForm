@@ -28,6 +28,7 @@
         "sweetalert2": "^9.15.1",
         "vue-avatar-editor": "^1.0.4",
         "vue-cropperjs": "^4.1.0",
+        "vue-instagram-cropper": "^1.1.4",
         "vue2-google-maps": "^0.10.7"
     }
 }

@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
+    <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
        
    
 

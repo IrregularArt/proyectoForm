@@ -29,12 +29,13 @@
 import Vue from 'vue'
 import VueAvatar from '../vue-avatar/components/VueAvatar.vue'
 import VueAvatarScale from '../vue-avatar/components/VueAvatarScale.vue'
-
+import Swal from "sweetalert2";
 export default {
     components: {
     VueAvatar,
     VueAvatarScale
   },
+    props:['editar'],
     data() {
         return {mensaje: 'hola vue!',
         imagen: null,
@@ -67,6 +68,26 @@ export default {
                 var imagenFinal = img.toDataURL();
                 //console.log(imagenFinal);
                 document.getElementById('imagenLocal').value = imagenFinal;
+
+                if(this.editar == 2){
+                    axios.post('/actualizarImagenLocal', {
+                        imgUrl: imagenFinal
+                    })
+                    .then(response => {
+                        
+                        Swal.fire({
+                                    icon: "success",
+                                    title:
+                                        "La imagen de su local ha sido actualizada.",
+                                    showConfirmButton: true,
+                                    timer: 1500
+                                });
+                    })
+                    .catch(function (error) {
+                    
+                        console.log(error);
+                    });
+                }
             },
             onImageReady(scale){
             this.$refs.vueavatarscale.setScale(scale)
@@ -96,4 +117,7 @@ export default {
     width : 300px;
     height : 300px;
 }
+#canFot{
+    width: 250px;
+    }
 </style>

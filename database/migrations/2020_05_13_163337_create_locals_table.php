@@ -22,6 +22,7 @@ class CreateLocalsTable extends Migration
             $table->string('address');
             $table->string('other');
             $table->string('local_name');
+            $table->string('local_img');
             $table->timestamps();
             $table->foreign('document_user')->references('document')->on('users');
         });

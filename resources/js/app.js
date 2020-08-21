@@ -23,6 +23,11 @@ window.Vue = require('vue');
 Vue.component('fotos-component', require('./components/FotosComponent.vue').default);
 Vue.component('mapa-component', require('./components/MapaComponent.vue').default);
 Vue.component('datos-component', require('./components/DatosComponent.vue').default);
+Vue.component('productos-component', require('./components/ProductosComponent.vue').default);
+Vue.component('galeria-component', require('./components/GaleriaComponent.vue').default);
+Vue.component('modalproc-component', require('./components/ModalprodComponent.vue').default);
+
+
 
 
 /**

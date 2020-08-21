@@ -19,7 +19,7 @@
         "laravel/ui": "^2.0",
         "laravelcollective/html": "^6.1",
         "laraveles/spanish": "^1.4",
-        "rtconner/laravel-tagging": "~4.0"
+        "rtconner/laravel-tagging": "~3.2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

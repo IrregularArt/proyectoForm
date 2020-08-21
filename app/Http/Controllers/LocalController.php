@@ -111,6 +111,12 @@ class LocalController extends Controller
         return "completado";
     }
 
+    Public function updateImg(Request $request){
+        $image = Image::make($request->get('imgUrl'));
+        $nombre = session('document').'.png';
+        $image->save(public_path().'/localesImg/'.$nombre);
+    }
+
     /**
      * Remove the specified resource from storage.
      *

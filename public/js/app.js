@@ -1963,6 +1963,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -1980,28 +2029,28 @@ __webpack_require__.r(__webpack_exports__);
       this.ver = false;
       this.ver1 = true;
       this.ver2 = true;
-      this.$refs.nombreLocal.removeAttribute('disabled');
-      this.$refs.telefono.removeAttribute('disabled');
-      this.$refs.whatsapp.removeAttribute('disabled');
-      this.$refs.direccion.removeAttribute('disabled');
-      this.$refs.otros.removeAttribute('disabled');
+      this.$refs.nombreLocal.removeAttribute("disabled");
+      this.$refs.telefono.removeAttribute("disabled");
+      this.$refs.whatsapp.removeAttribute("disabled");
+      this.$refs.direccion.removeAttribute("disabled");
+      this.$refs.otros.removeAttribute("disabled");
     },
     guarCanCambios: function guarCanCambios(e) {
       if (e === 1) {
-        axios.post('actualizarDatos', {
+        axios.post("actualizarDatos", {
           datos: this.datosLocal[0]
         }).then(function (response) {
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
-            icon: 'success',
-            title: 'Los datos de su local han sido actualizados',
+            icon: "success",
+            title: "Los datos de su local han sido actualizados",
             showConfirmButton: false,
             timer: 1500
           });
         })["catch"](function (error) {
           sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Algo salío mal al actualizar tus datos'
+            icon: "error",
+            title: "Oops...",
+            text: "Algo salío mal al actualizar tus datos"
           });
         }); // console.log(this.datosLocal);
       }
@@ -2009,11 +2058,11 @@ __webpack_require__.r(__webpack_exports__);
       this.ver = true;
       this.ver1 = false;
       this.ver2 = false;
-      this.$refs.nombreLocal.setAttribute('disabled', 'true');
-      this.$refs.telefono.setAttribute('disabled', 'true');
-      this.$refs.whatsapp.setAttribute('disabled', 'true');
-      this.$refs.direccion.setAttribute('disabled', 'true');
-      this.$refs.otros.setAttribute('disabled', 'true');
+      this.$refs.nombreLocal.setAttribute("disabled", "true");
+      this.$refs.telefono.setAttribute("disabled", "true");
+      this.$refs.whatsapp.setAttribute("disabled", "true");
+      this.$refs.direccion.setAttribute("disabled", "true");
+      this.$refs.otros.setAttribute("disabled", "true");
     }
   },
   mounted: function mounted() {// console.log( {{datosLocal}} );
@@ -2035,6 +2084,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _vue_avatar_components_VueAvatar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../vue-avatar/components/VueAvatar.vue */ "./resources/js/vue-avatar/components/VueAvatar.vue");
 /* harmony import */ var _vue_avatar_components_VueAvatarScale_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../vue-avatar/components/VueAvatarScale.vue */ "./resources/js/vue-avatar/components/VueAvatarScale.vue");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -2062,6 +2113,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -2070,6 +2122,7 @@ __webpack_require__.r(__webpack_exports__);
     VueAvatar: _vue_avatar_components_VueAvatar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     VueAvatarScale: _vue_avatar_components_VueAvatarScale_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
+  props: ['editar'],
   data: function data() {
     return {
       mensaje: 'hola vue!',
@@ -2103,6 +2156,21 @@ __webpack_require__.r(__webpack_exports__);
       var imagenFinal = img.toDataURL(); //console.log(imagenFinal);
 
       document.getElementById('imagenLocal').value = imagenFinal;
+
+      if (this.editar == 2) {
+        axios.post('/actualizarImagenLocal', {
+          imgUrl: imagenFinal
+        }).then(function (response) {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_3___default.a.fire({
+            icon: "success",
+            title: "La imagen de su local ha sido actualizada.",
+            showConfirmButton: true,
+            timer: 1500
+          });
+        })["catch"](function (error) {
+          console.log(error);
+        });
+      }
     },
     onImageReady: function onImageReady(scale) {
       this.$refs.vueavatarscale.setScale(scale);
@@ -2122,6 +2190,95 @@ __webpack_require__.r(__webpack_exports__);
   },
   afterMount: function afterMount() {
     this.cargarFoto();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GaleriaComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GaleriaComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['producto'],
+  data: function data() {
+    return {
+      img: "productosImg/" + this.producto.product_image,
+      editando: true,
+      etiquetas: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    //console.log(producto.product_name);
+    console.log("galeria montada");
+    this.producto.tags.forEach(function (tag) {
+      _this.etiquetas.push(tag.name);
+    });
+    this.producto.tags = this.etiquetas; //console.log(this.producto);
+  },
+  methods: {
+    editar: function editar() {
+      //this.editando = false;
+      this.$emit('editar', this.producto);
+    },
+    guardar: function guardar() {
+      this.editando = true;
+    },
+    eliminar: function eliminar(id) {
+      var _this2 = this;
+
+      axios.post('/eliminarProducto', {
+        idProducto: id
+      }).then(function (response) {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+          icon: "success",
+          title: "El producto ha sido eliminado.",
+          showConfirmButton: true,
+          timer: 1500
+        });
+
+        _this2.$emit('borrar');
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 
@@ -2209,6 +2366,623 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalprodComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ModalprodComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _instagram_cropper_InstagramCropper_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../instagram-cropper/InstagramCropper.vue */ "./resources/js/instagram-cropper/InstagramCropper.vue");
+/* harmony import */ var _instagram_cropper_core_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../instagram-cropper/core/data */ "./resources/js/instagram-cropper/core/data.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    InstagramCropper: _instagram_cropper_InstagramCropper_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  mounted: function mounted() {
+    console.log("modal listo");
+  },
+  data: function data() {
+    return {
+      cropper: '',
+      product_name: "",
+      product_description: "",
+      id_local: $("#idLocal").val(),
+      product_image: "",
+      correcto: "",
+      editando: true,
+      product_id: ""
+    };
+  },
+  methods: {
+    seleccionarImagen: function seleccionarImagen(event) {
+      this.$refs.icrop.refresh();
+      this.$refs.icrop.chooseFile(); // var verif = this.$refs.icrop.hasImage();
+      //this.cropper = 'img/SubirImg.png';
+
+      this.cropper = this.$refs.icrop.getChosenFile();
+      this.product_image = this.$refs.icrop.generateDataUrl();
+    },
+    abrirModal: function abrirModal() {
+      this.editando = true;
+      this.limpiarCampos();
+      $('#myModal').modal('show');
+    },
+    crearNuevoProducto: function crearNuevoProducto() {
+      var _this = this;
+
+      this.product_image = this.$refs.icrop.generateDataUrl();
+      axios.post('/guardarProducto', {
+        product_image: this.product_image,
+        product_name: this.product_name,
+        product_description: this.product_description,
+        id_local: this.id_local,
+        tags: $("#tags").val()
+      }).then(function (response) {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+          icon: "success",
+          title: "El producto ha sido ingresado.",
+          showConfirmButton: true,
+          timer: 1500
+        });
+        $('#myModal').modal('hide');
+
+        _this.$emit('nuevo');
+
+        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    abrirEditar: function abrirEditar(producto) {
+      console.log("----------------------------");
+      console.log(producto);
+      console.log("----------------------------");
+      this.editando = false;
+      this.limpiarCampos();
+      $("#myModal").modal("show");
+      this.cropper = 'productosImg/' + producto.product_image;
+      this.product_name = producto.product_name;
+      this.product_description = producto.product_description;
+      this.product_id = producto.id;
+      producto.tags.forEach(function (tag) {
+        $('#tags').tagsinput('add', tag);
+      });
+    },
+    actualizarProducto: function actualizarProducto() {
+      var _this2 = this;
+
+      this.product_image = this.$refs.icrop.generateDataUrl();
+      axios.post('/actualizarProducto', {
+        product_image: this.product_image,
+        product_name: this.product_name,
+        product_description: this.product_description,
+        id_local: this.id_local,
+        tags: $("#tags").val(),
+        product_id: this.product_id
+      }).then(function (response) {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+          icon: "success",
+          title: "El producto ha sido actualizado.",
+          showConfirmButton: true,
+          timer: 1500
+        });
+        $('#myModal').modal('hide');
+
+        _this2.$emit('actualizar'); // console.log(response);
+
+      })["catch"](function (error) {
+        console.log("error al actualizar");
+      });
+    },
+    limpiarCampos: function limpiarCampos() {
+      this.product_name = "";
+      this.product_description = "";
+      $("#tags").tagsinput('removeAll');
+      this.cropper = "", this.product_image = '';
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductosComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductosComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ModalprodComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalprodComponent.vue */ "./resources/js/components/ModalprodComponent.vue");
+/* harmony import */ var _GaleriaComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GaleriaComponent.vue */ "./resources/js/components/GaleriaComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    ModalprodComponent: _ModalprodComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    GaleriaComponent: _GaleriaComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      productos: [],
+      idLocal: $("#idLocal").val()
+    };
+  },
+  methods: {
+    cargarProductos: function cargarProductos(event) {
+      var _this = this;
+
+      $("#contenedorGaleria").addClass("cargando");
+      $(".lds-roller").addClass("visible");
+      axios.get('/obtenerGaleria/' + this.idLocal).then(function (response) {
+        return _this.productos = [], response.data.forEach(function (element) {
+          _this.productos.push(element);
+        }), console.log("//////////////"), console.log(_this.productos), console.log("///////////////"), // console.log(this.productos),
+        $(".lds-roller").removeClass("visible");
+      })["catch"](function (error) {
+        // handle error
+        //this.productos = null
+        console.log("error");
+      });
+    },
+    editarProducto: function editarProducto(producto) {
+      this.$refs.modal.abrirEditar(producto);
+    }
+  },
+  mounted: function mounted() {
+    this.cargarProductos();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_props__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core/props */ "./resources/js/instagram-cropper/core/props.js");
+/* harmony import */ var _core_propsOptions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./core/propsOptions */ "./resources/js/instagram-cropper/core/propsOptions.js");
+/* harmony import */ var _core_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./core/data */ "./resources/js/instagram-cropper/core/data.js");
+/* harmony import */ var _core_events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./core/events */ "./resources/js/instagram-cropper/core/events.js");
+/* harmony import */ var _core_const__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./core/const */ "./resources/js/instagram-cropper/core/const.js");
+/* harmony import */ var _mixins_initialize__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mixins/initialize */ "./resources/js/instagram-cropper/mixins/initialize.js");
+/* harmony import */ var _mixins_canvas__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./mixins/canvas */ "./resources/js/instagram-cropper/mixins/canvas.js");
+/* harmony import */ var _mixins_placeholder__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./mixins/placeholder */ "./resources/js/instagram-cropper/mixins/placeholder.js");
+/* harmony import */ var _mixins_computed__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./mixins/computed */ "./resources/js/instagram-cropper/mixins/computed.js");
+/* harmony import */ var _mixins_image__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./mixins/image */ "./resources/js/instagram-cropper/mixins/image.js");
+/* harmony import */ var _mixins_handleMethods__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./mixins/handleMethods */ "./resources/js/instagram-cropper/mixins/handleMethods.js");
+/* harmony import */ var _mixins_watches__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./mixins/watches */ "./resources/js/instagram-cropper/mixins/watches.js");
+/* harmony import */ var _mixins_fileinput__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./mixins/fileinput */ "./resources/js/instagram-cropper/mixins/fileinput.js");
+/* harmony import */ var _mixins_buttons_fullscreenButtonMethods__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./mixins/buttons/fullscreenButtonMethods */ "./resources/js/instagram-cropper/mixins/buttons/fullscreenButtonMethods.js");
+/* harmony import */ var _mixins_clipping_handleBounce__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./mixins/clipping/handleBounce */ "./resources/js/instagram-cropper/mixins/clipping/handleBounce.js");
+/* harmony import */ var _mixins_clipping_handleZoom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./mixins/clipping/handleZoom */ "./resources/js/instagram-cropper/mixins/clipping/handleZoom.js");
+/* harmony import */ var _mixins_clipping_handlePrevent__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./mixins/clipping/handlePrevent */ "./resources/js/instagram-cropper/mixins/clipping/handlePrevent.js");
+/* harmony import */ var _mixins_clipping_clips__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./mixins/clipping/clips */ "./resources/js/instagram-cropper/mixins/clipping/clips.js");
+/* harmony import */ var _mixins_layer_ruleofthirdGrid__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./mixins/layer/ruleofthirdGrid */ "./resources/js/instagram-cropper/mixins/layer/ruleofthirdGrid.js");
+/* harmony import */ var _components_spinner_SpinnerCircle_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/spinner/SpinnerCircle.vue */ "./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue");
+/* harmony import */ var _components_buttons_FullscreenButton_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/buttons/FullscreenButton.vue */ "./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue");
+/* harmony import */ var _components_buttons_RemoveButton_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/buttons/RemoveButton.vue */ "./resources/js/instagram-cropper/components/buttons/RemoveButton.vue");
+/* harmony import */ var _lib_deepClone__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./lib/deepClone */ "./resources/js/instagram-cropper/lib/deepClone.js");
+/* harmony import */ var _lib_Saving__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./lib/Saving */ "./resources/js/instagram-cropper/lib/Saving.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: _objectSpread(_objectSpread({}, _core_props__WEBPACK_IMPORTED_MODULE_0__["default"]), _core_propsOptions__WEBPACK_IMPORTED_MODULE_1__["default"]),
+  mixins: [_mixins_watches__WEBPACK_IMPORTED_MODULE_11__["default"], _mixins_initialize__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_canvas__WEBPACK_IMPORTED_MODULE_6__["default"], _mixins_placeholder__WEBPACK_IMPORTED_MODULE_7__["default"], _mixins_computed__WEBPACK_IMPORTED_MODULE_8__["default"], _mixins_image__WEBPACK_IMPORTED_MODULE_9__["default"], _mixins_handleMethods__WEBPACK_IMPORTED_MODULE_10__["default"], _mixins_buttons_fullscreenButtonMethods__WEBPACK_IMPORTED_MODULE_13__["default"], _mixins_clipping_handleBounce__WEBPACK_IMPORTED_MODULE_14__["default"], _mixins_clipping_handleZoom__WEBPACK_IMPORTED_MODULE_15__["default"], _mixins_clipping_handlePrevent__WEBPACK_IMPORTED_MODULE_16__["default"], _mixins_clipping_clips__WEBPACK_IMPORTED_MODULE_17__["default"], _mixins_fileinput__WEBPACK_IMPORTED_MODULE_12__["default"], _mixins_layer_ruleofthirdGrid__WEBPACK_IMPORTED_MODULE_18__["default"]],
+  components: {
+    SpinnerCircle: _components_spinner_SpinnerCircle_vue__WEBPACK_IMPORTED_MODULE_19__["default"],
+    FullscreenButton: _components_buttons_FullscreenButton_vue__WEBPACK_IMPORTED_MODULE_20__["default"],
+    RemoveButton: _components_buttons_RemoveButton_vue__WEBPACK_IMPORTED_MODULE_21__["default"]
+  },
+  data: function data() {
+    return _core_data__WEBPACK_IMPORTED_MODULE_2__["default"];
+  },
+  methods: {
+    emitEvent: function emitEvent() {
+      this.$emit.apply(this, arguments);
+    },
+    remove: function remove() {
+      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _core_events__WEBPACK_IMPORTED_MODULE_3__["default"].IMAGE_REMOVE_EVENT;
+      if (!this.imageSet) return;
+      this.$_c_setPlaceholders();
+      var hadImage = this.img != null;
+      this.$_c_reset_values();
+
+      if (hadImage) {
+        this.emitEvent(event);
+      }
+    },
+    move: function move(offset) {
+      if (!offset) return;
+      var oldX = this.imgData.startX;
+      var oldY = this.imgData.startY;
+      this.imgData.startX += offset.x;
+      this.imgData.startY += offset.y;
+
+      if (this.preventWhiteSpace) {
+        this.$_c_preventMovingToWhiteSpace();
+      }
+
+      if (this.imgData.startX !== oldX || this.imgData.startY !== oldY) {
+        this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_3__["default"].MOVE_EVENT);
+        this.$_c_draw();
+      }
+    },
+    hasImage: function hasImage() {
+      return !!this.imageSet;
+    },
+    chooseFile: function chooseFile() {
+      this.$refs.fileInput.click();
+    },
+    zoom: function zoom() {
+      var zoomIn = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+      var acceleration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+      var realSpeed = _core_const__WEBPACK_IMPORTED_MODULE_4__["ZOOM_SPEED"] * acceleration;
+      var speed = this.outputWidth * _core_const__WEBPACK_IMPORTED_MODULE_4__["PCT_PER_ZOOM"] * realSpeed;
+      var x = 1;
+
+      if (zoomIn) {
+        x = 1 + speed;
+      } else if (this.imgData.width > _core_const__WEBPACK_IMPORTED_MODULE_4__["MIN_WIDTH"]) {
+        x = 1 - speed;
+      } // https://github.com/zhanziyang/vue-croppa/pull/204/files
+      // when a new image is loaded with the same aspect ratio
+      // as the previously remove()d one, the imgData.width and .height
+      // effectivelly don't change (they change through one tick
+      // and end up being the same as before the tick, so the
+      // watchers don't trigger), make sure scaleRatio isn't null so
+      // that zooming works...
+
+
+      if (this.scaleRatio === null) {
+        this.scaleRatio = this.imgData.width / this.naturalWidth;
+      }
+
+      this.scaleRatio *= x;
+    },
+    getCanvas: function getCanvas() {
+      return this.canvas;
+    },
+    getContext: function getContext() {
+      return this.ctx;
+    },
+    getChosenFile: function getChosenFile() {
+      return this.chosenFile || this.$refs.fileInput.files[0];
+    },
+    refresh: function refresh() {
+      this.$nextTick(this.$_c_initialize);
+    },
+    saving: function saving(img, imgData, outputWidth, outputHeight) {
+      return new _lib_Saving__WEBPACK_IMPORTED_MODULE_23__["default"](img, imgData, outputWidth, outputHeight);
+    },
+    generateDataUrl: function generateDataUrl(type, compressionRate) {
+      if (!this.hasImage()) return '';
+      return this.saving(this.img, this.imgData, this.outputWidth, this.outputHeight).generateDataUrl(type, compressionRate);
+    },
+    generateBlob: function generateBlob(callback, mimeType, qualityArgument) {
+      if (!this.hasImage()) {
+        callback(null);
+        return;
+      }
+
+      this.saving(this.img, this.imgData, this.outputWidth, this.outputHeight).generateBlob(callback, mimeType, qualityArgument);
+    },
+    promisedBlob: function promisedBlob() {
+      var _this$saving;
+
+      return (_this$saving = this.saving(this.img, this.imgData, this.outputWidth, this.outputHeight)).promisedBlob.apply(_this$saving, arguments);
+    },
+    getMetadata: function getMetadata() {
+      return {
+        img: this.img,
+        imgData: Object(_lib_deepClone__WEBPACK_IMPORTED_MODULE_22__["default"])(this.imgData),
+        scaleRatio: Object(_lib_deepClone__WEBPACK_IMPORTED_MODULE_22__["default"])(this.scaleRatio)
+      };
+    },
+    addClipPlugin: function addClipPlugin(plugin) {
+      if (!this.clipPlugins) {
+        this.clipPlugins = [];
+      }
+
+      if (typeof plugin === 'function' && this.clipPlugins.indexOf(plugin) < 0) {
+        this.clipPlugins.push(plugin);
+      } else {
+        throw Error('Clip plugins should be functions');
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RoundedButton_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RoundedButton.vue */ "./resources/js/instagram-cropper/components/buttons/RoundedButton.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    RoundedButton: _RoundedButton_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RoundedButton_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RoundedButton.vue */ "./resources/js/instagram-cropper/components/buttons/RoundedButton.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    RoundedButton: _RoundedButton_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -7131,6 +7905,203 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/canvas-exif-orientation/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/canvas-exif-orientation/index.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
+    if (true) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else {}
+}(this, function () {
+  'use strict';
+
+  function drawImage(img, orientation, x, y, width, height) {
+    if (!/^[1-8]$/.test(orientation)) throw new Error('orientation should be [1-8]');
+
+    if (x == null) x = 0;
+    if (y == null) y = 0;
+    if (width == null) width = img.width;
+    if (height == null) height = img.height;
+
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = width;
+    canvas.height = height;
+
+    ctx.save();
+    switch (+orientation) {
+      // 1 = The 0th row is at the visual top of the image, and the 0th column is the visual left-hand side.
+      case 1:
+          break;
+
+      // 2 = The 0th row is at the visual top of the image, and the 0th column is the visual right-hand side.
+      case 2:
+         ctx.translate(width, 0);
+         ctx.scale(-1, 1);
+         break;
+
+      // 3 = The 0th row is at the visual bottom of the image, and the 0th column is the visual right-hand side.
+      case 3:
+          ctx.translate(width, height);
+          ctx.rotate(180 / 180 * Math.PI);
+          break;
+
+      // 4 = The 0th row is at the visual bottom of the image, and the 0th column is the visual left-hand side.
+      case 4:
+          ctx.translate(0, height);
+          ctx.scale(1, -1);
+          break;
+
+      // 5 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual top.
+      case 5:
+          canvas.width = height;
+          canvas.height = width;
+          ctx.rotate(90 / 180 * Math.PI);
+          ctx.scale(1, -1);
+          break;
+
+      // 6 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual top.
+      case 6:
+          canvas.width = height;
+          canvas.height = width;
+          ctx.rotate(90 / 180 * Math.PI);
+          ctx.translate(0, -height);
+          break;
+
+      // 7 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual bottom.
+      case 7:
+          canvas.width = height;
+          canvas.height = width;
+          ctx.rotate(270 / 180 * Math.PI);
+          ctx.translate(-width, height);
+          ctx.scale(1, -1);
+          break;
+
+      // 8 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual bottom.
+      case 8:
+          canvas.width = height;
+          canvas.height = width;
+          ctx.translate(0, width);
+          ctx.rotate(270 / 180 * Math.PI);
+          break;
+    }
+
+    ctx.drawImage(img, x, y, width, height);
+    ctx.restore();
+
+    return canvas;
+  }
+
+  return {
+    drawImage: drawImage
+  };
+}));
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".cropper-container[data-v-c9dac2d4] {\n  display: inline-block;\n  cursor: pointer;\n  position: relative;\n  font-size: 0;\n  align-self: flex-start;\n  height: 200px;\n  width: 200px;\n}\n.cropper-container[data-v-c9dac2d4]:hover {\n  opacity: 0.7;\n}\n.cropper-container.cropper--dropzone[data-v-c9dac2d4] {\n  box-shadow: inset 0 0 10px #333;\n}\n.cropper-container.cropper--dropzone canvas[data-v-c9dac2d4] {\n  opacity: 0.5;\n}\n.cropper-container.cropper--has-target[data-v-c9dac2d4] {\n  cursor: move;\n}\n.cropper-container.cropper--has-target[data-v-c9dac2d4]:hover {\n  opacity: 1;\n}\n#canImg[data-v-c9dac2d4] {\n  height: 200px !important;\n  width: 200px !important;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".bottom-left-abs[data-v-3951512e] {\n  bottom: 8px;\n  left: 8px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".top-right-abs[data-v-00730ef2] {\n  top: 8px;\n  right: 8px;\n}\n.top-right-abs svg[data-v-00730ef2] {\n  margin: 1px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".rounded-button[data-v-79f7455a] {\n  position: absolute;\n  display: flex;\n  text-align: center;\n  vertical-align: middle;\n  cursor: pointer;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  background-color: rgba(37, 37, 37, 0.6);\n  border: 1px solid transparent;\n  padding: 0;\n  font-size: 16px;\n  line-height: 1.5;\n  border-radius: 100px;\n  box-shadow: 0 0 1px #949494;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n.rounded-button[data-v-79f7455a]:hover {\n  background-color: rgba(37, 37, 37, 0.75);\n}\n.rounded-button .btn__content[data-v-79f7455a] {\n  display: flex;\n  padding: 6px;\n  border-radius: 100px;\n}\n.rounded-button[data-v-79f7455a]:focus, .rounded-button .btn__content[data-v-79f7455a]:focus {\n  outline: none;\n}\n.rounded-button:focus > .btn__content[data-v-79f7455a] {\n  box-shadow: 0 0 2px 2px #51a7e8;\n  /* keyboard-only focus styles */\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".cropper-spinner[data-v-61f738f5] {\n  display: flex;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-left: -21px;\n  margin-top: -21px;\n  box-sizing: border-box;\n  justify-content: center;\n  perspective-origin: 60px 60px;\n  transform-origin: 60px 60px;\n  border: 0px solid black;\n  flex: 0 0 auto;\n  flex-flow: column nowrap;\n}\n.cropper-spinner[data-v-61f738f5]:after, .cropper-spinner[data-v-61f738f5]:before {\n  height: 42px;\n  width: 42px;\n  border-radius: 50%;\n  border-style: solid;\n  border-width: 2px;\n  box-sizing: border-box;\n  content: \"\";\n  left: 0;\n  position: absolute;\n  top: 0;\n}\n.cropper-spinner[data-v-61f738f5]:after {\n  -webkit-animation: rotate-data-v-61f738f5 2s infinite ease;\n          animation: rotate-data-v-61f738f5 2s infinite ease;\n  border-color: #3897f0 transparent transparent;\n  transform-origin: 50%;\n}\n.cropper-spinner[data-v-61f738f5]:before {\n  border-color: #c7c7c7;\n}\n@-webkit-keyframes rotate-data-v-61f738f5 {\n0% {\n    transform: rotate(0deg);\n}\nto {\n    transform: rotate(360deg);\n}\n}\n@keyframes rotate-data-v-61f738f5 {\n0% {\n    transform: rotate(0deg);\n}\nto {\n    transform: rotate(360deg);\n}\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DatosComponent.vue?vue&type=style&index=0&id=8fa6dca6&scoped=true&lang=css&":
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DatosComponent.vue?vue&type=style&index=0&id=8fa6dca6&scoped=true&lang=css& ***!
@@ -7143,7 +8114,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#nombreLocal[data-v-8fa6dca6]{\n    width: 50%;\n    text-align: center;\n}\n#otros[data-v-8fa6dca6]{\n    width: 100% !important;\n}\n", ""]);
+exports.push([module.i, "\n#nombreLocal[data-v-8fa6dca6] {\r\n    width: 50%;\r\n    text-align: center;\n}\n#otros[data-v-8fa6dca6] {\r\n    width: 100% !important;\n}\r\n", ""]);
 
 // exports
 
@@ -7162,7 +8133,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#crop-container[data-v-aacb0c0e]{\r\n    width : 300px;\r\n    height : 300px;\n}\r\n", ""]);
+exports.push([module.i, "\n#crop-container[data-v-aacb0c0e]{\r\n    width : 300px;\r\n    height : 300px;\n}\n#canFot[data-v-aacb0c0e]{\r\n    width: 250px;\n}\r\n", ""]);
 
 // exports
 
@@ -7182,6 +8153,44 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "\n#mapaG[data-v-3ba01b9d]{\r\n    width: 400px;\r\n    height: 370px;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.modal-body[data-v-26124704]{\n    min-height: 400px;\n}\n#agregarImagen[data-v-26124704]{\n    height: 50px;\n}\n#contenerdorCropper[data-v-26124704]{\n    background-color: black;\n    width: 220px;\n    height: 220px;\n    padding: 10px;\n    border-radius: 10px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#prueba[data-v-0c04ebd5]{\n        background-color: black;\n}\n.visible[data-v-0c04ebd5]{\n        position: absolute !important;\n        z-index: 4;\n        right: 50%;\n        display: inline-block !important;\n}\n.lds-roller[data-v-0c04ebd5] {\n        \n  display: none;\n  position: relative;\n  width: 80px;\n  height: 80px;\n}\n.lds-roller div[data-v-0c04ebd5] {\n  -webkit-animation: lds-roller-data-v-0c04ebd5 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n          animation: lds-roller-data-v-0c04ebd5 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n  transform-origin: 40px 40px;\n}\n.lds-roller div[data-v-0c04ebd5]:after {\n  content: \" \";\n  display: block;\n  position: absolute;\n  width: 7px;\n  height: 7px;\n  border-radius: 50%;\n  background: #000;\n  margin: -4px 0 0 -4px;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(1) {\n  -webkit-animation-delay: -0.036s;\n          animation-delay: -0.036s;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(1):after {\n  top: 63px;\n  left: 63px;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(2) {\n  -webkit-animation-delay: -0.072s;\n          animation-delay: -0.072s;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(2):after {\n  top: 68px;\n  left: 56px;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(3) {\n  -webkit-animation-delay: -0.108s;\n          animation-delay: -0.108s;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(3):after {\n  top: 71px;\n  left: 48px;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(4) {\n  -webkit-animation-delay: -0.144s;\n          animation-delay: -0.144s;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(4):after {\n  top: 72px;\n  left: 40px;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(5) {\n  -webkit-animation-delay: -0.18s;\n          animation-delay: -0.18s;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(5):after {\n  top: 71px;\n  left: 32px;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(6) {\n  -webkit-animation-delay: -0.216s;\n          animation-delay: -0.216s;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(6):after {\n  top: 68px;\n  left: 24px;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(7) {\n  -webkit-animation-delay: -0.252s;\n          animation-delay: -0.252s;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(7):after {\n  top: 63px;\n  left: 17px;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(8) {\n  -webkit-animation-delay: -0.288s;\n          animation-delay: -0.288s;\n}\n.lds-roller div[data-v-0c04ebd5]:nth-child(8):after {\n  top: 56px;\n  left: 12px;\n}\n@-webkit-keyframes lds-roller-data-v-0c04ebd5 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes lds-roller-data-v-0c04ebd5 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -40387,6 +41396,156 @@ try {
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DatosComponent.vue?vue&type=style&index=0&id=8fa6dca6&scoped=true&lang=css&":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DatosComponent.vue?vue&type=style&index=0&id=8fa6dca6&scoped=true&lang=css& ***!
@@ -40456,6 +41615,66 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./MapaComponent.vue?vue&type=style&index=0&id=3ba01b9d&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MapaComponent.vue?vue&type=style&index=0&id=3ba01b9d&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -44442,7 +45661,7 @@ var render = function() {
               staticClass: "btn btn-warning m-2",
               on: { click: _vm.mostrarBoton }
             },
-            [_vm._v("editar información")]
+            [_vm._v("\n            editar información\n        ")]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -44458,7 +45677,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("cancelar")]
+            [_vm._v("\n            cancelar\n        ")]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -44474,7 +45693,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("guardar")]
+            [_vm._v("\n            guardar\n        ")]
           )
         : _vm._e()
     ])
@@ -44540,6 +45759,102 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GaleriaComponent.vue?vue&type=template&id=ccb9b45e&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GaleriaComponent.vue?vue&type=template&id=ccb9b45e& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "card m-2 p-1 border-success bg-info",
+        staticStyle: { "max-width": "22.72rem" }
+      },
+      [
+        _c("img", {
+          staticClass: "card-img-top rounded",
+          attrs: { src: _vm.img, alt: "Card image cap" }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "card-body" },
+          [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v(_vm._s(this.producto.product_name))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(_vm._s(this.producto.product_description))
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.etiquetas, function(tag) {
+              return _c("div", { key: tag }, [
+                _c(
+                  "span",
+                  {
+                    staticClass: "label label-info p-1",
+                    staticStyle: { color: "#FFF" }
+                  },
+                  [_vm._v(_vm._s(tag))]
+                )
+              ])
+            }),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: " btn btn-warning",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.editar()
+                  }
+                }
+              },
+              [_vm._v("editar")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: " btn btn-danger",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.eliminar(_vm.producto.id)
+                  }
+                }
+              },
+              [_vm._v("eliminar")]
+            )
+          ],
+          2
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MapaComponent.vue?vue&type=template&id=3ba01b9d&scoped=true&":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MapaComponent.vue?vue&type=template&id=3ba01b9d&scoped=true& ***!
@@ -44578,6 +45893,651 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalprodComponent.vue?vue&type=template&id=26124704&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ModalprodComponent.vue?vue&type=template&id=26124704&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "modal fade bd-example-modal-lg",
+        attrs: { tabindex: "-1", role: "dialog", id: "myModal" }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog modal-lg" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "row justify-content-center" }, [
+                _c(
+                  "div",
+                  { attrs: { id: "contenerdorCropper" } },
+                  [
+                    _c("instagram-cropper", {
+                      ref: "icrop",
+                      attrs: {
+                        src: _vm.cropper,
+                        quality: 2,
+                        "placeholder-font-size": 14,
+                        "placeholder-color": "#000000",
+                        placeholder: "Choose or Drag'n'Drop an image"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row justify-content-center" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-warning",
+                    on: { click: _vm.seleccionarImagen }
+                  },
+                  [
+                    _c("i", { staticClass: "fas fa-upload" }),
+                    _vm._v("seleccionar imagen")
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "form-group m-5" }, [
+                  _c("label", { attrs: { for: "nombreprod" } }, [
+                    _vm._v("Nombre del producto:")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.product_name,
+                        expression: "product_name"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", id: "nombreprod" },
+                    domProps: { value: _vm.product_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.product_name = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group m-5" }, [
+                  _c("label", { attrs: { for: "descripprod" } }, [
+                    _vm._v("Descripcion del producto:")
+                  ]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.product_description,
+                        expression: "product_description"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { id: "descripprod", cols: "30", rows: "10" },
+                    domProps: { value: _vm.product_description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.product_description = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(1)
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _vm.editando
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "button" },
+                      on: { click: _vm.crearNuevoProducto }
+                    },
+                    [_vm._v("Crear el producto")]
+                  )
+                : _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { type: "button" },
+                      on: { click: _vm.actualizarProducto }
+                    },
+                    [_vm._v("Guardar cambios")]
+                  ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button", "data-dismiss": "modal" }
+                },
+                [_vm._v("Cerrar")]
+              )
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "row justify-content-end" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", on: { click: _vm.abrirModal } },
+        [_vm._v("nuevo")]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h5", { staticClass: "modal-title" }, [_vm._v("Agregar un producto")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-5" }, [
+        _c("label", { attrs: { for: "Tags" } }, [
+          _vm._v("Etiquetas de su producto:")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            id: "tags",
+            "data-role": "tagsinput",
+            name: "tags",
+            value: "",
+            autocomplete: "off"
+          }
+        })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductosComponent.vue?vue&type=template&id=0c04ebd5&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductosComponent.vue?vue&type=template&id=0c04ebd5&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("modalproc-component", {
+        ref: "modal",
+        on: { nuevo: _vm.cargarProductos, actualizar: _vm.cargarProductos }
+      }),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm.productos[0]
+        ? _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(this.productos, function(producto) {
+              return _c("galeria-component", {
+                key: producto.id,
+                attrs: { producto: producto },
+                on: {
+                  borrar: _vm.cargarProductos,
+                  editar: function($event) {
+                    return _vm.editarProducto.apply(void 0, arguments)
+                  }
+                }
+              })
+            }),
+            1
+          )
+        : _c("div", [
+            _c("span", [_vm._v("Aun no tienes ningun producto registrado.")])
+          ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "lds-roller" }, [
+      _c("div"),
+      _c("div"),
+      _c("div"),
+      _c("div"),
+      _c("div"),
+      _c("div"),
+      _c("div"),
+      _c("div")
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=template&id=c9dac2d4&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=template&id=c9dac2d4&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "cropper-container",
+      class: _vm.img ? "cropper--has-target" : "",
+      style: "background-color:" + _vm.canvasColor + ";",
+      on: {
+        dragenter: function($event) {
+          $event.stopPropagation()
+          $event.preventDefault()
+          return _vm.$_c_handleDragEnter($event)
+        },
+        dragleave: function($event) {
+          $event.stopPropagation()
+          $event.preventDefault()
+          return _vm.$_c_handleDragLeave($event)
+        },
+        dragover: function($event) {
+          $event.stopPropagation()
+          $event.preventDefault()
+          return _vm.$_c_handleDragOver($event)
+        },
+        drop: function($event) {
+          $event.stopPropagation()
+          $event.preventDefault()
+          return _vm.$_c_handleDrop($event)
+        }
+      }
+    },
+    [
+      _c("input", {
+        ref: "fileInput",
+        staticStyle: {
+          height: "1px",
+          width: "1px",
+          overflow: "hidden",
+          "margin-left": "-99999px",
+          position: "absolute"
+        },
+        attrs: { type: "file", accept: "image/*" },
+        on: { change: _vm.$_c_handleInputChange }
+      }),
+      _vm._v(" "),
+      _c("canvas", {
+        ref: "canvas",
+        attrs: { id: "canImg" },
+        on: {
+          click: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handleClick($event)
+          },
+          dblclick: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handleDblClick($event)
+          },
+          touchstart: function($event) {
+            $event.stopPropagation()
+            return _vm.$_c_handlePointerStart($event)
+          },
+          mousedown: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerStart($event)
+          },
+          pointerstart: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerStart($event)
+          },
+          touchend: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerEnd($event)
+          },
+          touchcancel: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerEnd($event)
+          },
+          mouseup: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerEnd($event)
+          },
+          pointerend: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerEnd($event)
+          },
+          pointercancel: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerEnd($event)
+          },
+          touchmove: function($event) {
+            $event.stopPropagation()
+            return _vm.$_c_handlePointerMove($event)
+          },
+          mousemove: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerMove($event)
+          },
+          pointermove: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerMove($event)
+          },
+          pointerleave: function($event) {
+            $event.stopPropagation()
+            $event.preventDefault()
+            return _vm.$_c_handlePointerLeave($event)
+          },
+          DOMMouseScroll: function($event) {
+            $event.stopPropagation()
+            return _vm.$_c_handleWheel($event)
+          },
+          wheel: function($event) {
+            $event.stopPropagation()
+            return _vm.$_c_handleWheel($event)
+          },
+          mousewheel: function($event) {
+            $event.stopPropagation()
+            return _vm.$_c_handleWheel($event)
+          }
+        }
+      }),
+      _vm._v(" "),
+      _vm.loading ? _c("SpinnerCircle") : _vm._e(),
+      _vm._v(" "),
+      _vm._t("default"),
+      _vm._v(" "),
+      _vm.img && _vm.aspectRatio !== 1 && !_vm.preventWhiteSpace
+        ? _c("FullscreenButton", {
+            nativeOn: {
+              click: function($event) {
+                return _vm.$_c_handleFullscreen($event)
+              }
+            }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.img
+        ? _c("RemoveButton", {
+            nativeOn: {
+              click: function($event) {
+                return _vm.remove()
+              }
+            }
+          })
+        : _vm._e()
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=template&id=3951512e&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=template&id=3951512e&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("rounded-button", { staticClass: "bottom-left-abs" }, [
+    _c(
+      "svg",
+      {
+        attrs: {
+          viewBox: "0 0 22.5 22.5",
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "12",
+          height: "12"
+        }
+      },
+      [
+        _c(
+          "g",
+          {
+            attrs: {
+              fill: "none",
+              stroke: "#fff",
+              "stroke-linecap": "round",
+              "stroke-miterlimit": "10",
+              "stroke-width": "1.5"
+            }
+          },
+          [
+            _c("path", { attrs: { d: "m.75 13.75v7.6a.4.4 0 0 0 .4.4h7.6" } }),
+            _vm._v(" "),
+            _c("path", {
+              attrs: { d: "m21.75 8.75v-7.6a.4.4 0 0 0 -.4-.4h-7.6" }
+            })
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=template&id=00730ef2&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=template&id=00730ef2&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("rounded-button", { staticClass: "top-right-abs" }, [
+    _c(
+      "svg",
+      {
+        attrs: {
+          viewBox: "0 0 12.81 12.81",
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "10",
+          height: "10"
+        }
+      },
+      [
+        _c(
+          "g",
+          {
+            attrs: {
+              fill: "none",
+              stroke: "#fff",
+              "stroke-linecap": "round",
+              "stroke-miterlimit": "10",
+              "stroke-width": "1.5"
+            }
+          },
+          [
+            _c("path", { attrs: { d: "m.75.75 5.66 5.66 5.65-5.66" } }),
+            _vm._v(" "),
+            _c("path", { attrs: { d: "m12.06 12.06-5.65-5.65-5.66 5.65" } })
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=template&id=79f7455a&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=template&id=79f7455a&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "button",
+    { staticClass: "rounded-button", attrs: { type: "button" } },
+    [
+      _c(
+        "span",
+        { staticClass: "btn__content", attrs: { tabindex: "-1" } },
+        [_vm._t("default")],
+        2
+      )
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=template&id=61f738f5&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=template&id=61f738f5&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "cropper-spinner" })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/vue-avatar/components/VueAvatar.vue?vue&type=template&id=4f45f747&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/vue-avatar/components/VueAvatar.vue?vue&type=template&id=4f45f747& ***!
@@ -44598,7 +46558,7 @@ var render = function() {
     {
       ref: "canvas",
       class: _vm.cursor,
-      attrs: { width: _vm.canvasWidth, height: _vm.canvasHeight },
+      attrs: { id: "canFot", width: _vm.canvasWidth, height: _vm.canvasHeight },
       on: {
         dragover: function($event) {
           $event.preventDefault()
@@ -56858,6 +58818,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('fotos-component', __webpack_require__(/*! ./components/FotosComponent.vue */ "./resources/js/components/FotosComponent.vue")["default"]);
 Vue.component('mapa-component', __webpack_require__(/*! ./components/MapaComponent.vue */ "./resources/js/components/MapaComponent.vue")["default"]);
 Vue.component('datos-component', __webpack_require__(/*! ./components/DatosComponent.vue */ "./resources/js/components/DatosComponent.vue")["default"]);
+Vue.component('productos-component', __webpack_require__(/*! ./components/ProductosComponent.vue */ "./resources/js/components/ProductosComponent.vue")["default"]);
+Vue.component('galeria-component', __webpack_require__(/*! ./components/GaleriaComponent.vue */ "./resources/js/components/GaleriaComponent.vue")["default"]);
+Vue.component('modalproc-component', __webpack_require__(/*! ./components/ModalprodComponent.vue */ "./resources/js/components/ModalprodComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -57089,6 +59052,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/GaleriaComponent.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/GaleriaComponent.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GaleriaComponent_vue_vue_type_template_id_ccb9b45e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GaleriaComponent.vue?vue&type=template&id=ccb9b45e& */ "./resources/js/components/GaleriaComponent.vue?vue&type=template&id=ccb9b45e&");
+/* harmony import */ var _GaleriaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GaleriaComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/GaleriaComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GaleriaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GaleriaComponent_vue_vue_type_template_id_ccb9b45e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GaleriaComponent_vue_vue_type_template_id_ccb9b45e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/GaleriaComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/GaleriaComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/GaleriaComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GaleriaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./GaleriaComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GaleriaComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GaleriaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/GaleriaComponent.vue?vue&type=template&id=ccb9b45e&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/GaleriaComponent.vue?vue&type=template&id=ccb9b45e& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GaleriaComponent_vue_vue_type_template_id_ccb9b45e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./GaleriaComponent.vue?vue&type=template&id=ccb9b45e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GaleriaComponent.vue?vue&type=template&id=ccb9b45e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GaleriaComponent_vue_vue_type_template_id_ccb9b45e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GaleriaComponent_vue_vue_type_template_id_ccb9b45e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/MapaComponent.vue":
 /*!***************************************************!*\
   !*** ./resources/js/components/MapaComponent.vue ***!
@@ -57173,6 +59205,2536 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MapaComponent_vue_vue_type_template_id_3ba01b9d_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/ModalprodComponent.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/ModalprodComponent.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ModalprodComponent_vue_vue_type_template_id_26124704_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalprodComponent.vue?vue&type=template&id=26124704&scoped=true& */ "./resources/js/components/ModalprodComponent.vue?vue&type=template&id=26124704&scoped=true&");
+/* harmony import */ var _ModalprodComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalprodComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ModalprodComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _ModalprodComponent_vue_vue_type_style_index_0_id_26124704_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css& */ "./resources/js/components/ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _ModalprodComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ModalprodComponent_vue_vue_type_template_id_26124704_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ModalprodComponent_vue_vue_type_template_id_26124704_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "26124704",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ModalprodComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ModalprodComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/ModalprodComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ModalprodComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalprodComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_style_index_0_id_26124704_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalprodComponent.vue?vue&type=style&index=0&id=26124704&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_style_index_0_id_26124704_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_style_index_0_id_26124704_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_style_index_0_id_26124704_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_style_index_0_id_26124704_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_style_index_0_id_26124704_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ModalprodComponent.vue?vue&type=template&id=26124704&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/ModalprodComponent.vue?vue&type=template&id=26124704&scoped=true& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_template_id_26124704_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ModalprodComponent.vue?vue&type=template&id=26124704&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalprodComponent.vue?vue&type=template&id=26124704&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_template_id_26124704_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalprodComponent_vue_vue_type_template_id_26124704_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ProductosComponent.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/ProductosComponent.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ProductosComponent_vue_vue_type_template_id_0c04ebd5_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductosComponent.vue?vue&type=template&id=0c04ebd5&scoped=true& */ "./resources/js/components/ProductosComponent.vue?vue&type=template&id=0c04ebd5&scoped=true&");
+/* harmony import */ var _ProductosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductosComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ProductosComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _ProductosComponent_vue_vue_type_style_index_0_id_0c04ebd5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css& */ "./resources/js/components/ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _ProductosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ProductosComponent_vue_vue_type_template_id_0c04ebd5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ProductosComponent_vue_vue_type_template_id_0c04ebd5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "0c04ebd5",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ProductosComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ProductosComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/ProductosComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductosComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductosComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_style_index_0_id_0c04ebd5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductosComponent.vue?vue&type=style&index=0&id=0c04ebd5&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_style_index_0_id_0c04ebd5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_style_index_0_id_0c04ebd5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_style_index_0_id_0c04ebd5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_style_index_0_id_0c04ebd5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_style_index_0_id_0c04ebd5_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ProductosComponent.vue?vue&type=template&id=0c04ebd5&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/ProductosComponent.vue?vue&type=template&id=0c04ebd5&scoped=true& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_template_id_0c04ebd5_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductosComponent.vue?vue&type=template&id=0c04ebd5&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductosComponent.vue?vue&type=template&id=0c04ebd5&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_template_id_0c04ebd5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductosComponent_vue_vue_type_template_id_0c04ebd5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/InstagramCropper.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/instagram-cropper/InstagramCropper.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InstagramCropper_vue_vue_type_template_id_c9dac2d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InstagramCropper.vue?vue&type=template&id=c9dac2d4&scoped=true& */ "./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=template&id=c9dac2d4&scoped=true&");
+/* harmony import */ var _InstagramCropper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InstagramCropper.vue?vue&type=script&lang=js& */ "./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _InstagramCropper_vue_vue_type_style_index_0_id_c9dac2d4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true& */ "./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _InstagramCropper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InstagramCropper_vue_vue_type_template_id_c9dac2d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InstagramCropper_vue_vue_type_template_id_c9dac2d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "c9dac2d4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/instagram-cropper/InstagramCropper.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./InstagramCropper.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_style_index_0_id_c9dac2d4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=style&index=0&id=c9dac2d4&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_style_index_0_id_c9dac2d4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_style_index_0_id_c9dac2d4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_style_index_0_id_c9dac2d4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_style_index_0_id_c9dac2d4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_style_index_0_id_c9dac2d4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=template&id=c9dac2d4&scoped=true&":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=template&id=c9dac2d4&scoped=true& ***!
+  \********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_template_id_c9dac2d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./InstagramCropper.vue?vue&type=template&id=c9dac2d4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/InstagramCropper.vue?vue&type=template&id=c9dac2d4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_template_id_c9dac2d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InstagramCropper_vue_vue_type_template_id_c9dac2d4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue":
+/*!********************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FullscreenButton_vue_vue_type_template_id_3951512e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FullscreenButton.vue?vue&type=template&id=3951512e&scoped=true& */ "./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=template&id=3951512e&scoped=true&");
+/* harmony import */ var _FullscreenButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FullscreenButton.vue?vue&type=script&lang=js& */ "./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _FullscreenButton_vue_vue_type_style_index_0_id_3951512e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true& */ "./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _FullscreenButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FullscreenButton_vue_vue_type_template_id_3951512e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FullscreenButton_vue_vue_type_template_id_3951512e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "3951512e",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/instagram-cropper/components/buttons/FullscreenButton.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FullscreenButton.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true&":
+/*!******************************************************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true& ***!
+  \******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_style_index_0_id_3951512e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=style&index=0&id=3951512e&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_style_index_0_id_3951512e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_style_index_0_id_3951512e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_style_index_0_id_3951512e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_style_index_0_id_3951512e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_style_index_0_id_3951512e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=template&id=3951512e&scoped=true&":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=template&id=3951512e&scoped=true& ***!
+  \***************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_template_id_3951512e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FullscreenButton.vue?vue&type=template&id=3951512e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/FullscreenButton.vue?vue&type=template&id=3951512e&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_template_id_3951512e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FullscreenButton_vue_vue_type_template_id_3951512e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/RemoveButton.vue":
+/*!****************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/RemoveButton.vue ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RemoveButton_vue_vue_type_template_id_00730ef2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RemoveButton.vue?vue&type=template&id=00730ef2&scoped=true& */ "./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=template&id=00730ef2&scoped=true&");
+/* harmony import */ var _RemoveButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RemoveButton.vue?vue&type=script&lang=js& */ "./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _RemoveButton_vue_vue_type_style_index_0_id_00730ef2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true& */ "./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _RemoveButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RemoveButton_vue_vue_type_template_id_00730ef2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RemoveButton_vue_vue_type_template_id_00730ef2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "00730ef2",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/instagram-cropper/components/buttons/RemoveButton.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RemoveButton.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true&":
+/*!**************************************************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true& ***!
+  \**************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_style_index_0_id_00730ef2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=style&index=0&id=00730ef2&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_style_index_0_id_00730ef2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_style_index_0_id_00730ef2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_style_index_0_id_00730ef2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_style_index_0_id_00730ef2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_style_index_0_id_00730ef2_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=template&id=00730ef2&scoped=true&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=template&id=00730ef2&scoped=true& ***!
+  \***********************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_template_id_00730ef2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RemoveButton.vue?vue&type=template&id=00730ef2&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RemoveButton.vue?vue&type=template&id=00730ef2&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_template_id_00730ef2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RemoveButton_vue_vue_type_template_id_00730ef2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/RoundedButton.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/RoundedButton.vue ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RoundedButton_vue_vue_type_template_id_79f7455a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RoundedButton.vue?vue&type=template&id=79f7455a&scoped=true& */ "./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=template&id=79f7455a&scoped=true&");
+/* harmony import */ var _RoundedButton_vue_vue_type_style_index_0_id_79f7455a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true& */ "./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  script,
+  _RoundedButton_vue_vue_type_template_id_79f7455a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RoundedButton_vue_vue_type_template_id_79f7455a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "79f7455a",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/instagram-cropper/components/buttons/RoundedButton.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true&":
+/*!***************************************************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true& ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RoundedButton_vue_vue_type_style_index_0_id_79f7455a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=style&index=0&id=79f7455a&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RoundedButton_vue_vue_type_style_index_0_id_79f7455a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RoundedButton_vue_vue_type_style_index_0_id_79f7455a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RoundedButton_vue_vue_type_style_index_0_id_79f7455a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RoundedButton_vue_vue_type_style_index_0_id_79f7455a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_RoundedButton_vue_vue_type_style_index_0_id_79f7455a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=template&id=79f7455a&scoped=true&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=template&id=79f7455a&scoped=true& ***!
+  \************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RoundedButton_vue_vue_type_template_id_79f7455a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RoundedButton.vue?vue&type=template&id=79f7455a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/buttons/RoundedButton.vue?vue&type=template&id=79f7455a&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RoundedButton_vue_vue_type_template_id_79f7455a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RoundedButton_vue_vue_type_template_id_79f7455a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SpinnerCircle_vue_vue_type_template_id_61f738f5_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SpinnerCircle.vue?vue&type=template&id=61f738f5&scoped=true& */ "./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=template&id=61f738f5&scoped=true&");
+/* harmony import */ var _SpinnerCircle_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SpinnerCircle.vue?vue&type=script&lang=js& */ "./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _SpinnerCircle_vue_vue_type_style_index_0_id_61f738f5_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true& */ "./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _SpinnerCircle_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SpinnerCircle_vue_vue_type_template_id_61f738f5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SpinnerCircle_vue_vue_type_template_id_61f738f5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "61f738f5",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SpinnerCircle.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true&":
+/*!***************************************************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true& ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_style_index_0_id_61f738f5_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=style&index=0&id=61f738f5&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_style_index_0_id_61f738f5_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_style_index_0_id_61f738f5_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_style_index_0_id_61f738f5_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_style_index_0_id_61f738f5_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_style_index_0_id_61f738f5_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=template&id=61f738f5&scoped=true&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=template&id=61f738f5&scoped=true& ***!
+  \************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_template_id_61f738f5_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SpinnerCircle.vue?vue&type=template&id=61f738f5&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/instagram-cropper/components/spinner/SpinnerCircle.vue?vue&type=template&id=61f738f5&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_template_id_61f738f5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SpinnerCircle_vue_vue_type_template_id_61f738f5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/core/const.js":
+/*!******************************************************!*\
+  !*** ./resources/js/instagram-cropper/core/const.js ***!
+  \******************************************************/
+/*! exports provided: PCT_PER_ZOOM, MIN_MS_PER_CLICK, CLICK_MOVE_THRESHOLD, MIN_WIDTH, DEFAULT_PLACEHOLDER_TAKEUP, PINCH_ACCELERATION, ZOOM_SPEED, MAXIMUM_ASPECT_RATIO, MINIMUM_ASPECT_RATIO */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PCT_PER_ZOOM", function() { return PCT_PER_ZOOM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MIN_MS_PER_CLICK", function() { return MIN_MS_PER_CLICK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLICK_MOVE_THRESHOLD", function() { return CLICK_MOVE_THRESHOLD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MIN_WIDTH", function() { return MIN_WIDTH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_PLACEHOLDER_TAKEUP", function() { return DEFAULT_PLACEHOLDER_TAKEUP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PINCH_ACCELERATION", function() { return PINCH_ACCELERATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZOOM_SPEED", function() { return ZOOM_SPEED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAXIMUM_ASPECT_RATIO", function() { return MAXIMUM_ASPECT_RATIO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MINIMUM_ASPECT_RATIO", function() { return MINIMUM_ASPECT_RATIO; });
+var PCT_PER_ZOOM = 1 / 100000; // The amount of zooming everytime it happens, in percentage of image width.
+
+var MIN_MS_PER_CLICK = 500; // If touch duration is shorter than the value, then it is considered as a click.
+
+var CLICK_MOVE_THRESHOLD = 100; // If touch move distance is greater than this value, then it will by no mean be considered as a click.
+
+var MIN_WIDTH = 10; // The minimal width the user can zoom to.
+
+var DEFAULT_PLACEHOLDER_TAKEUP = 2 / 3; // Placeholder text by default takes up this amount of times of canvas width.
+
+var PINCH_ACCELERATION = 2; // The amount of times by which the pinching is more sensitive than the scolling
+
+var ZOOM_SPEED = 3; // Specifies how fast the zoom is reacting to scroll gestures. Default to level 3.
+
+var MAXIMUM_ASPECT_RATIO = 1.91 / 1;
+var MINIMUM_ASPECT_RATIO = 4 / 5;
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/core/data.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/instagram-cropper/core/data.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  canvas: null,
+  ctx: null,
+  img: null,
+  line: null,
+  imgData: {
+    width: 0,
+    height: 0,
+    startX: 0,
+    startY: 0
+  },
+  naturalWidth: 0,
+  naturalHeight: 0,
+  scaleRatio: null,
+  // unfortunately a stupid bug
+  // if I use e.g. aspectFill, it
+  // activates the scaleRatio and changes the
+  // image position.
+  skipScaleRatio: false,
+  imageSet: false,
+  loading: false,
+  // only for when autoSizing is on
+  realWidth: 0,
+  realHeight: 0,
+  chosenFile: null,
+  // used in handle mixins
+  supportTouch: false,
+  pointerMoved: false,
+  pointerStartCoord: null,
+  tabStart: 0,
+  dragging: false,
+  pinching: false,
+  lastMovingCoord: null,
+  pinchDistance: 0,
+  currentPointerCoord: null,
+  scrolling: false,
+  fileDraggedOver: false,
+  // used in fileinput.js for the input field
+  currentIsInitial: false
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/core/events.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/instagram-cropper/core/events.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  INIT_EVENT: 'init',
+  FILE_CHOOSE_EVENT: 'file-choose',
+  FILE_SIZE_EXCEED_EVENT: 'file-size-exceed',
+  FILE_TYPE_MISMATCH_EVENT: 'file-type-mismatch',
+  FILE_LOADED_EVENT: 'file-loaded',
+  NEW_IMAGE_EVENT: 'new-image',
+  NEW_IMAGE_DRAWN_EVENT: 'new-image-drawn',
+  IMAGE_ERROR_EVENT: 'image-error',
+  IMAGE_REMOVE_EVENT: 'image-remove',
+  IMAGE_REMOVE_ONLOAD_EVENT: 'image-remove-onload',
+  MOVE_EVENT: 'move',
+  ZOOM_EVENT: 'zoom',
+  DRAW_EVENT: 'draw',
+  INITIAL_IMAGE_LOADED_EVENT: 'initial-image-loaded',
+  LOADING_START_EVENT: 'loading-start',
+  LOADING_END_EVENT: 'loading-end'
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/core/props.js":
+/*!******************************************************!*\
+  !*** ./resources/js/instagram-cropper/core/props.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _lib_validator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/validator */ "./resources/js/instagram-cropper/lib/validator.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  src: {
+    type: [Object, String],
+    validator: _lib_validator__WEBPACK_IMPORTED_MODULE_0__["default"],
+    required: false
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/core/propsOptions.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/instagram-cropper/core/propsOptions.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  quality: {
+    type: Number,
+    "default": 2,
+    validator: function validator(val) {
+      return val > 0;
+    }
+  },
+  canvasColor: {
+    "default": '#F7F7F7'
+  },
+  placeholder: {
+    type: String,
+    "default": 'Choose an image'
+  },
+  placeholderColor: {
+    "default": '#67ACFD'
+  },
+  placeholderFontSize: {
+    type: Number,
+    "default": 0,
+    validator: function validator(val) {
+      return val >= 0;
+    }
+  },
+  fileSizeLimit: {
+    type: Number,
+    "default": 0,
+    validator: function validator(val) {
+      return val >= 0;
+    }
+  },
+  forceCacheBreak: {
+    type: Boolean,
+    "default": false,
+    note: 'This is important if you have still CORS issues. But remember the browser is not caching images anymore'
+  },
+  preventWhiteSpace: {
+    type: Boolean,
+    "default": false
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/core/util.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/instagram-cropper/core/util.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var canvas_exif_orientation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! canvas-exif-orientation */ "./node_modules/canvas-exif-orientation/index.js");
+/* harmony import */ var canvas_exif_orientation__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(canvas_exif_orientation__WEBPACK_IMPORTED_MODULE_0__);
+/* eslint-disable prefer-destructuring */
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  imageLoaded: function imageLoaded(img) {
+    return img.complete && img.naturalWidth !== 0;
+  },
+  numberValid: function numberValid(n) {
+    return typeof n === 'number' && !Number.isNaN(n);
+  },
+  getPointerCoords: function getPointerCoords(evt, vm) {
+    var pointer;
+
+    if (evt.touches && evt.touches[0]) {
+      pointer = evt.touches[0];
+    } else if (evt.changedTouches && evt.changedTouches[0]) {
+      pointer = evt.changedTouches[0];
+    } else {
+      pointer = evt;
+    }
+
+    return this.onePointCoord(pointer, vm);
+  },
+  onePointCoord: function onePointCoord(point, vm) {
+    var canvas = vm.canvas,
+        quality = vm.quality;
+    var rect = canvas.getBoundingClientRect();
+    var clientX = point.clientX;
+    var clientY = point.clientY;
+    return {
+      x: (clientX - rect.left) * quality,
+      y: (clientY - rect.top) * quality
+    };
+  },
+  getPinchDistance: function getPinchDistance(evt, vm) {
+    var pointer1 = evt.touches[0];
+    var pointer2 = evt.touches[1];
+    var coord1 = this.onePointCoord(pointer1, vm);
+    var coord2 = this.onePointCoord(pointer2, vm);
+    return Math.sqrt(Math.pow(coord1.x - coord2.x, 2) + Math.pow(coord1.y - coord2.y, 2));
+  },
+  eventHasFile: function eventHasFile(evt) {
+    var dt = evt.dataTransfer || evt.originalEvent.dataTransfer;
+
+    if (dt.types) {
+      for (var i = 0, len = dt.types.length; i < len; i += 1) {
+        if (dt.types[i] === 'Files') {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  },
+  getRotatedImage: function getRotatedImage(img, orientation) {
+    var canvas = canvas_exif_orientation__WEBPACK_IMPORTED_MODULE_0___default.a.drawImage(img, orientation);
+    var tempImg = new Image();
+    tempImg.src = canvas.toDataURL();
+    return tempImg;
+  },
+  getFileOrientation: function getFileOrientation(arrayBuffer) {
+    var view = new DataView(arrayBuffer);
+    if (view.getUint16(0, false) !== 0xFFD8) return -2;
+    var length = view.byteLength;
+    var offset = 2;
+
+    while (offset < length) {
+      var marker = view.getUint16(offset, false);
+      offset += 2;
+
+      if (marker === 0xFFE1) {
+        if (view.getUint32(offset += 2, false) !== 0x45786966) return -1;
+        var little = view.getUint16(offset += 6, false) === 0x4949;
+        offset += view.getUint32(offset + 4, little);
+        var tags = view.getUint16(offset, little);
+        offset += 2;
+
+        for (var i = 0; i < tags; i += 1) {
+          if (view.getUint16(offset + i * 12, little) === 0x0112) {
+            return view.getUint16(offset + i * 12 + 8, little);
+          }
+        }
+      } else if ((marker & 0xFF00) !== 0xFF00) break;else offset += view.getUint16(offset, false);
+    }
+
+    return -1;
+  },
+  base64ToArrayBuffer: function base64ToArrayBuffer(base64) {
+    var binaryString = atob(base64);
+    var len = binaryString.length;
+    var bytes = new Uint8Array(len);
+
+    for (var i = 0; i < len; i += 1) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+
+    return bytes.buffer;
+  },
+  parseDataUrl: function parseDataUrl(url) {
+    var reg = /^data:([^;]+)?(;base64)?,(.*)/gmi;
+    return reg.exec(url)[3];
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/lib/Line.js":
+/*!****************************************************!*\
+  !*** ./resources/js/instagram-cropper/lib/Line.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Line; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// https://stackoverflow.com/questions/19966912/drawing-over-an-image-in-html5-canvas-while-preserving-the-image
+var Line = /*#__PURE__*/function () {
+  function Line(ctx) {
+    _classCallCheck(this, Line);
+
+    this.ctx = ctx;
+    this.x1 = 0;
+    this.x2 = 0;
+    this.y1 = 0;
+    this.y2 = 0;
+  }
+
+  _createClass(Line, [{
+    key: "draw",
+    value: function draw() {
+      this.ctx.beginPath();
+      this.ctx.moveTo(this.x1, this.y1);
+      this.ctx.lineTo(this.x2, this.y2);
+      this.ctx.stroke();
+    }
+  }]);
+
+  return Line;
+}();
+
+
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/lib/Saving.js":
+/*!******************************************************!*\
+  !*** ./resources/js/instagram-cropper/lib/Saving.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Saving; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * The goal is, just to save the image on the canvas and not the rest what might be seen.
+ */
+
+/**
+     * Remember: we don't need to set the quality, since imgData, and output
+     * has already calculated it in croppa
+     */
+var Saving = /*#__PURE__*/function () {
+  function Saving(img, imgData, outputWidth, outputHeight) {
+    _classCallCheck(this, Saving);
+
+    this.img = img;
+    this.imgData = imgData;
+    this.outputWidth = outputWidth;
+    this.outputHeight = outputHeight;
+    this.canvas = null;
+    this.ctx = null;
+  }
+
+  _createClass(Saving, [{
+    key: "generateDataUrl",
+    value: function generateDataUrl(type, compressionRate) {
+      this.createCanvas();
+      var result = this.canvas.toDataURL(type, compressionRate);
+      this.beforeDestroy();
+      return result;
+    }
+  }, {
+    key: "generateBlob",
+    value: function generateBlob(callback, mimeType, qualityArgument) {
+      this.createCanvas();
+      this.canvas.toBlob(callback, mimeType, qualityArgument);
+      this.beforeDestroy();
+    }
+  }, {
+    key: "promisedBlob",
+    value: function promisedBlob() {
+      var _this = this;
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      if (typeof Promise === 'undefined') {
+        console.warn('No Promise support. Please add Promise polyfill if you want to use this method.');
+        return null;
+      }
+
+      return new Promise(function (resolve, reject) {
+        try {
+          _this.generateBlob.apply(_this, [function (blob) {
+            resolve(blob);
+          }].concat(args));
+        } catch (err) {
+          reject(err);
+        }
+      });
+    }
+  }, {
+    key: "createCanvas",
+    value: function createCanvas() {
+      this.canvas = document.createElement('canvas');
+      this.ctx = this.canvas.getContext('2d');
+      this.drawImageOnCanvas();
+    }
+  }, {
+    key: "drawImageOnCanvas",
+    value: function drawImageOnCanvas() {
+      var _this$imgData = this.imgData,
+          width = _this$imgData.width,
+          height = _this$imgData.height;
+      this.calculateCanvasDimension(width, height);
+
+      var _this$getXYPosition = this.getXYPosition(),
+          startX = _this$getXYPosition.startX,
+          startY = _this$getXYPosition.startY; // ctx.drawImage(image, dx, dy, dWidth, dHeight);
+
+
+      this.ctx.drawImage(this.img, startX, startY, width, height);
+    }
+  }, {
+    key: "getXYPosition",
+    value: function getXYPosition() {
+      return {
+        startX: this.imgData.startX > 0 ? 0 : this.imgData.startX,
+        startY: this.imgData.startY > 0 ? 0 : this.imgData.startY
+      };
+    }
+  }, {
+    key: "calculateCanvasDimension",
+    value: function calculateCanvasDimension(imgWidth, imgHeight) {
+      this.canvas.width = imgWidth > this.outputWidth ? this.outputWidth : imgWidth;
+      this.canvas.height = imgHeight > this.outputHeight ? this.outputHeight : imgHeight;
+    }
+  }, {
+    key: "beforeDestroy",
+    value: function beforeDestroy() {
+      this.canvas = null;
+      this.ctx = null;
+    }
+  }]);
+
+  return Saving;
+}();
+
+
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/lib/debounce.js":
+/*!********************************************************!*\
+  !*** ./resources/js/instagram-cropper/lib/debounce.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return debounce; });
+// https://github.com/vuejs-tips/tiny-debounce/blob/master/index.js
+function debounce(fn, delay) {
+  var timeoutID = null;
+  return function debounceTieout() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    clearTimeout(timeoutID);
+    var that = this;
+    timeoutID = setTimeout(function () {
+      fn.apply(that, args);
+    }, delay);
+  };
+}
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/lib/deepClone.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/instagram-cropper/lib/deepClone.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function (obj) {
+  return JSON.parse(JSON.stringify(obj));
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/lib/helper.js":
+/*!******************************************************!*\
+  !*** ./resources/js/instagram-cropper/lib/helper.js ***!
+  \******************************************************/
+/*! exports provided: exists, has */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "exists", function() { return exists; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "has", function() { return has; });
+function exists(obj, key) {
+  if (!obj) return false;
+  var temp = Object.prototype.hasOwnProperty;
+  return temp.call(obj, key);
+}
+function has(obj, key) {
+  return exists(obj, key) && Boolean(obj[key]);
+}
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/lib/polyfills.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/instagram-cropper/lib/polyfills.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  rAFPolyfill: function rAFPolyfill() {
+    // rAF polyfill
+    if (typeof document === 'undefined' || typeof window === 'undefined') return;
+    var lastTime = 0;
+    var vendors = ['webkit', 'moz'];
+
+    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+      window.requestAnimationFrame = window["".concat(vendors[x], "RequestAnimationFrame")];
+      window.cancelAnimationFrame = window["".concat(vendors[x], "CancelAnimationFrame")] // Webkit中此取消方法的名字变了
+      || window["".concat(vendors[x], "CancelRequestAnimationFrame")];
+    }
+
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = function requestAnimationFrame(callback) {
+        var currTime = new Date().getTime();
+        var timeToCall = Math.max(0, 16.7 - (currTime - lastTime));
+        var id = window.setTimeout(function () {
+          var arg = currTime + timeToCall;
+          callback(arg);
+        }, timeToCall);
+        lastTime = currTime + timeToCall;
+        return id;
+      };
+    }
+
+    if (!window.cancelAnimationFrame) {
+      window.cancelAnimationFrame = function cancelAnimationFrame(id) {
+        clearTimeout(id);
+      };
+    }
+
+    Array.isArray = function isArray(arg) {
+      return Object.prototype.toString.call(arg) === '[object Array]';
+    };
+  },
+  toBlobPolyfill: function toBlobPolyfill() {
+    if (typeof document === 'undefined' || typeof window === 'undefined' || !HTMLCanvasElement) return;
+    var binStr;
+    var len;
+    var arr;
+
+    if (!HTMLCanvasElement.prototype.toBlob) {
+      Object.defineProperty(HTMLCanvasElement.prototype, 'toBlob', {
+        value: function value(callback, type, quality) {
+          binStr = atob(this.toDataURL(type, quality).split(',')[1]);
+          len = binStr.length;
+          arr = new Uint8Array(len);
+
+          for (var i = 0; i < len; i++) {
+            arr[i] = binStr.charCodeAt(i);
+          }
+
+          callback(new Blob([arr], {
+            type: type || 'image/png'
+          }));
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/lib/validator.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/instagram-cropper/lib/validator.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return validateVModel; });
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helper */ "./resources/js/instagram-cropper/lib/helper.js");
+
+/**
+ * It validates the prop value for our v-model. If it's not empty, we need the URL property.
+ * Remember: This is fired, when object is not empty.
+ *
+ * @param   {object}  val
+ *
+ * @return  {boolean}
+ */
+
+function validateVModel(val) {
+  if (typeof val === 'string') return true;
+
+  if (hasCropperProperties(val)) {
+    return true;
+  }
+
+  emitError('v-model is missing correct properties');
+  return false;
+}
+
+function emitError(msg) {
+  console.error(msg);
+}
+
+function hasCropperProperties(val) {
+  var result = true;
+  var firstLayer = ['img', 'imgData', 'scaleRatio'];
+  var secondLayer = ['height', 'startX', 'startY', 'width'];
+  firstLayer.forEach(function (item) {
+    result = result && Object(_helper__WEBPACK_IMPORTED_MODULE_0__["exists"])(val, item);
+  });
+  secondLayer.forEach(function (item) {
+    result = result && Object(_helper__WEBPACK_IMPORTED_MODULE_0__["exists"])(val.imgData, item);
+  });
+  return result;
+}
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/buttons/fullscreenButtonMethods.js":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/buttons/fullscreenButtonMethods.js ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_handleFullscreen: function $_c_handleFullscreen() {
+      if (this.$_c_imageIsFullyZoomedOut()) {
+        this.$_c_aspectFill();
+        return;
+      }
+
+      if (this.$_c_imageIsFullyZoomedIn()) {
+        this.$_c_aspectFit();
+        return;
+      }
+
+      this.$_c_aspectFill();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/canvas.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/canvas.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core/events */ "./resources/js/instagram-cropper/core/events.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_setContainerSize: function $_c_setContainerSize() {
+      this.realWidth = parseInt(getComputedStyle(this.$el).width.slice(0, -2), 10);
+      this.realHeight = parseInt(getComputedStyle(this.$el).height.slice(0, -2), 10);
+    },
+    $_c_autoSizingInit: function $_c_autoSizingInit() {
+      this.$_c_setContainerSize();
+      window.addEventListener('resize', this.$_c_setContainerSize);
+    },
+    $_c_autoSizingRemove: function $_c_autoSizingRemove() {
+      this.$_c_setContainerSize();
+      window.removeEventListener('resize', this.$_c_setContainerSize);
+    },
+    $_c_draw: function $_c_draw() {
+      var _this = this;
+
+      this.$nextTick(function () {
+        if (typeof window !== 'undefined' && window.requestAnimationFrame) {
+          requestAnimationFrame(_this.$_c_drawFrame);
+        } else {
+          _this.$_c_drawFrame();
+        }
+      });
+    },
+    $_c_drawFrame: function $_c_drawFrame() {
+      if (!this.img) return;
+      this.loading = false;
+      var ctx = this.ctx;
+      var _this$imgData = this.imgData,
+          startX = _this$imgData.startX,
+          startY = _this$imgData.startY,
+          width = _this$imgData.width,
+          height = _this$imgData.height;
+      this.$_c_paintBackground();
+      ctx.drawImage(this.img, startX, startY, width, height);
+
+      if (this.preventWhiteSpace) {
+        this.$_c_clip(this.$_c_createContainerClipPath);
+      }
+
+      this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_0__["default"].DRAW_EVENT, ctx);
+
+      if (!this.imageSet) {
+        this.imageSet = true;
+        this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_0__["default"].NEW_IMAGE_DRAWN_EVENT);
+      }
+
+      if (this.dragging || this.pinching || this.scrolling) {
+        this.$_c_drawRuleOfThirdGrid();
+      }
+
+      this.$_c_updateVModel();
+    },
+    $_c_paintBackground: function $_c_paintBackground() {
+      this.ctx.fillStyle = this.canvasColor;
+      this.ctx.clearRect(0, 0, this.outputWidth, this.outputHeight);
+      this.ctx.fillRect(0, 0, this.outputWidth, this.outputHeight);
+    },
+    $_c_onDimensionChange: function $_c_onDimensionChange() {
+      if (!this.img) {
+        this.$_c_initialize();
+        return;
+      }
+
+      if (this.preventWhiteSpace) {
+        this.imageSet = false;
+      }
+
+      this.$_c_setSize();
+      this.$_c_setCtx();
+      this.$_c_placeImage();
+      this.$_c_handleZoomWheel();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/clipping/clips.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/clipping/clips.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_clipPathFactory: function $_c_clipPathFactory(x, y, width, height) {
+      var ctx = this.ctx;
+      var radius = 0;
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
+    },
+    $_c_createContainerClipPath: function $_c_createContainerClipPath() {
+      var _this = this;
+
+      this.$_c_clipPathFactory(0, 0, this.outputWidth, this.outputHeight);
+
+      if (this.clipPlugins && this.clipPlugins.length) {
+        this.clipPlugins.forEach(function (func) {
+          func(_this.ctx, 0, 0, _this.outputWidth, _this.outputHeight);
+        });
+      }
+    },
+    $_c_clip: function $_c_clip(createPath) {
+      var ctx = this.ctx;
+      ctx.save();
+      ctx.fillStyle = '#fff';
+      ctx.globalCompositeOperation = 'destination-in';
+      createPath();
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/clipping/handleBounce.js":
+/*!************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/clipping/handleBounce.js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * Bounces the image back, if it is not dislayed correctly when moved
+ */
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_checkBounceness: function $_c_checkBounceness() {
+      if (this.aspectRatio > this.canvasRatio) {
+        // Checking Y-Coordination
+        if (this.imgData.height <= this.outputHeight) {
+          this.$_c_bounceTopCenter();
+        } else if (this.imgData.startY >= 0) {
+          this.$_c_bounceTop();
+        } else {
+          var visibleHeight = this.imgData.height + this.imgData.startY;
+
+          if (visibleHeight < this.outputHeight) {
+            this.$_c_bounceBottom();
+          }
+        } // Checking X-Coordination
+
+
+        if (this.imgData.startX >= 0) {
+          this.$_c_bounceLeft();
+        } else {
+          var visibleWidth = this.imgData.width + this.imgData.startX;
+
+          if (visibleWidth < this.outputWidth) {
+            this.$_c_bounceRight();
+          }
+        }
+      } else {
+        // Checking X-Coordination
+        if (this.imgData.width <= this.outputWidth) {
+          this.$_c_bounceLeftCenter();
+        } else if (this.imgData.startX >= 0) {
+          this.$_c_bounceLeft();
+        } else {
+          var _visibleWidth = this.imgData.width + this.imgData.startX;
+
+          if (_visibleWidth < this.outputWidth) {
+            this.$_c_bounceRight();
+          }
+        } // Checking Y-Coordination
+
+
+        if (this.imgData.startY >= 0) {
+          this.$_c_bounceTop();
+        } else {
+          var _visibleHeight = this.imgData.height + this.imgData.startY;
+
+          if (_visibleHeight < this.outputHeight) {
+            this.$_c_bounceBottom();
+          }
+        }
+      }
+    },
+    $_c_bounceLeft: function $_c_bounceLeft() {
+      this.imgData.startX = 0;
+    },
+    $_c_bounceTop: function $_c_bounceTop() {
+      this.imgData.startY = 0;
+    },
+    $_c_bounceRight: function $_c_bounceRight() {
+      this.imgData.startX = this.outputWidth - this.imgData.width;
+    },
+    $_c_bounceBottom: function $_c_bounceBottom() {
+      this.imgData.startY = this.outputHeight - this.imgData.height;
+    },
+    $_c_bounceTopCenter: function $_c_bounceTopCenter() {
+      this.imgData.startY = -(this.imgData.height - this.outputHeight) / 2;
+    },
+    $_c_bounceLeftCenter: function $_c_bounceLeftCenter() {
+      this.imgData.startX = -(this.imgData.width - this.outputWidth) / 2;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/clipping/handlePrevent.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/clipping/handlePrevent.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_preventZoomingToWhiteSpace: function $_c_preventZoomingToWhiteSpace() {
+      if (this.imgData.width < this.outputWidth) {
+        this.scaleRatio = this.outputWidth / this.naturalWidth;
+      }
+
+      if (this.imgData.height < this.outputHeight) {
+        this.scaleRatio = this.outputHeight / this.naturalHeight;
+      }
+    },
+    $_c_preventMovingToWhiteSpace: function $_c_preventMovingToWhiteSpace() {
+      if (this.imgData.startX > 0) {
+        this.imgData.startX = 0;
+      }
+
+      if (this.imgData.startY > 0) {
+        this.imgData.startY = 0;
+      }
+
+      if (this.outputWidth - this.imgData.startX > this.imgData.width) {
+        this.imgData.startX = -(this.imgData.width - this.outputWidth);
+      }
+
+      if (this.outputHeight - this.imgData.startY > this.imgData.height) {
+        this.imgData.startY = -(this.imgData.height - this.outputHeight);
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/clipping/handleZoom.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/clipping/handleZoom.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * We need to check if the image is too zoomed in or too zoomed out.
+ * For wheel events our touching pinching
+ */
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_handleZoomWheel: function $_c_handleZoomWheel() {
+      if (this.$_c_imageIsFullyZoomedOut()) {
+        this.$_c_aspectFit();
+        return;
+      }
+
+      if (this.$_c_imageReachedMaximumScale()) {
+        this.scaleRatio = this.maximumScaleRatio;
+      }
+
+      this.$_c_checkBounceness();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/computed.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/computed.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core/const */ "./resources/js/instagram-cropper/core/const.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    outputWidth: function outputWidth() {
+      var w = this.realWidth;
+      return w * this.quality;
+    },
+    outputHeight: function outputHeight() {
+      var h = this.realHeight;
+      return h * this.quality;
+    },
+    computedPlaceholderFontSize: function computedPlaceholderFontSize() {
+      return this.placeholderFontSize * this.quality;
+    },
+    aspectRatio: function aspectRatio() {
+      return this.naturalWidth / this.naturalHeight;
+    },
+    canvasRatio: function canvasRatio() {
+      return this.outputWidth / this.outputHeight;
+    },
+    // The ratio you see on the canvas or blob result
+    aspectCanvasRatio: function aspectCanvasRatio() {
+      if (this.aspectRatio > this.canvasRatio) {
+        return this.outputWidth / (this.imgData.height > this.outputHeight ? this.outputHeight : this.imgData.height);
+      }
+
+      return (this.imgData.width > this.outputWidth ? this.outputWidth : this.imgData.width) / this.outputHeight;
+    },
+    maximumScaleRatio: function maximumScaleRatio() {
+      // my weird calculation from Instagram
+      return this.aspectRatio * 2.56 + 2.725;
+    },
+    maximumAspectRatio: function maximumAspectRatio() {
+      return this.canvasRatio > _core_const__WEBPACK_IMPORTED_MODULE_0__["MAXIMUM_ASPECT_RATIO"] ? this.canvasRatio : _core_const__WEBPACK_IMPORTED_MODULE_0__["MAXIMUM_ASPECT_RATIO"];
+    },
+    minimumAspectRatio: function minimumAspectRatio() {
+      return this.canvasRatio < _core_const__WEBPACK_IMPORTED_MODULE_0__["MINIMUM_ASPECT_RATIO"] ? this.canvasRatio : _core_const__WEBPACK_IMPORTED_MODULE_0__["MINIMUM_ASPECT_RATIO"];
+    },
+    greaterThanMaximumAspectRatio: function greaterThanMaximumAspectRatio() {
+      return this.aspectRatio > this.maximumAspectRatio;
+    },
+    smallerThanMinimumAspectRatio: function smallerThanMinimumAspectRatio() {
+      return this.aspectRatio < this.minimumAspectRatio;
+    },
+    greaterThanMaximumAspectCanvasRatio: function greaterThanMaximumAspectCanvasRatio() {
+      return this.aspectCanvasRatio > this.maximumAspectRatio;
+    },
+    smallerThanMinimumAspectCanvasRatio: function smallerThanMinimumAspectCanvasRatio() {
+      return this.aspectCanvasRatio < this.minimumAspectRatio;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/fileinput.js":
+/*!************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/fileinput.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core/events */ "./resources/js/instagram-cropper/core/events.js");
+/* harmony import */ var _core_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/util */ "./resources/js/instagram-cropper/core/util.js");
+// Handles the methods for the input field with the type "file"
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_onNewFileIn: function $_c_onNewFileIn(file) {
+      var _this = this;
+
+      this.currentIsInitial = false;
+      this.loading = true;
+      this.$_c_paintBackground();
+      this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_0__["default"].FILE_CHOOSE_EVENT, file);
+      this.chosenFile = file;
+
+      if (!this.$_c_fileSizeIsValid(file)) {
+        this.loading = false;
+        this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_0__["default"].FILE_SIZE_EXCEED_EVENT, file);
+        return;
+      }
+
+      if (!this.$_c_fileTypeIsValid(file)) {
+        this.loading = false;
+        this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_0__["default"].FILE_TYPE_MISMATCH_EVENT, file);
+        return;
+      }
+
+      if (typeof window === 'undefined' || typeof window.FileReader === 'undefined') {
+        return;
+      }
+
+      var fr = new FileReader();
+
+      fr.onload = function (e) {
+        var fileData = e.target.result;
+
+        var orientation = _this.$_c_getFileOrientation(fileData);
+
+        var img = new Image();
+        img.src = fileData;
+        fileData = null; // Weird..
+
+        img.onload = function () {
+          _this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_0__["default"].FILE_LOADED_EVENT);
+
+          _this.$_c_onload(img, orientation);
+
+          _this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_0__["default"].NEW_IMAGE_EVENT);
+        };
+      };
+
+      fr.readAsDataURL(file);
+    },
+    $_c_getFileOrientation: function $_c_getFileOrientation(fileData) {
+      var base64 = _core_util__WEBPACK_IMPORTED_MODULE_1__["default"].parseDataUrl(fileData);
+      var orientation = 1;
+
+      try {
+        orientation = _core_util__WEBPACK_IMPORTED_MODULE_1__["default"].getFileOrientation(_core_util__WEBPACK_IMPORTED_MODULE_1__["default"].base64ToArrayBuffer(base64));
+      } catch (err) {//
+      }
+
+      if (orientation < 1) orientation = 1;
+      return orientation;
+    },
+    $_c_fileSizeIsValid: function $_c_fileSizeIsValid(file) {
+      if (!file) return false;
+      if (!this.fileSizeLimit || this.fileSizeLimit === 0) return true;
+      return file.size < this.fileSizeLimit;
+    },
+    $_c_fileTypeIsValid: function $_c_fileTypeIsValid(file) {
+      var acceptableMimeType = /^image/.test(file.type);
+      if (!acceptableMimeType) return false;
+      return true;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/handleMethods.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/handleMethods.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core/util */ "./resources/js/instagram-cropper/core/util.js");
+/* harmony import */ var _core_const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/const */ "./resources/js/instagram-cropper/core/const.js");
+/* eslint-disable prefer-destructuring */
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    emitNativeEvent: function emitNativeEvent(evt) {
+      this.emitEvent(evt.type, evt);
+    },
+    $_c_handlePointerStart: function $_c_handlePointerStart(evt) {
+      this.emitNativeEvent(evt);
+      this.supportTouch = true;
+      this.pointerMoved = false;
+      var pointerCoord = _core_util__WEBPACK_IMPORTED_MODULE_0__["default"].getPointerCoords(evt, this);
+      this.pointerStartCoord = pointerCoord; // simulate click with touch on mobile devices
+
+      if (!this.hasImage()) {
+        this.tabStart = new Date().valueOf();
+        return;
+      } // ignore mouse right click and middle click
+
+
+      if (evt.which && evt.which > 1) return;
+
+      if (!evt.touches || evt.touches.length === 1) {
+        this.dragging = true;
+        this.pinching = false;
+        var coord = _core_util__WEBPACK_IMPORTED_MODULE_0__["default"].getPointerCoords(evt, this);
+        this.lastMovingCoord = coord;
+      }
+
+      if (evt.touches && evt.touches.length === 2) {
+        this.dragging = false;
+        this.pinching = true;
+        this.pinchDistance = _core_util__WEBPACK_IMPORTED_MODULE_0__["default"].getPinchDistance(evt, this);
+      }
+
+      var cancelEvents = ['mouseup', 'touchend', 'touchcancel', 'pointerend', 'pointercancel'];
+
+      for (var i = 0, len = cancelEvents.length; i < len; i += 1) {
+        var e = cancelEvents[i];
+        document.addEventListener(e, this.$_c_handlePointerEnd);
+      }
+    },
+    $_c_handlePointerEnd: function $_c_handlePointerEnd(evt) {
+      this.emitNativeEvent(evt);
+      var pointerMoveDistance = 0;
+
+      if (this.pointerStartCoord) {
+        var pointerCoord = _core_util__WEBPACK_IMPORTED_MODULE_0__["default"].getPointerCoords(evt, this);
+        pointerMoveDistance = Math.sqrt(Math.pow(pointerCoord.x - this.pointerStartCoord.x, 2) + Math.pow(pointerCoord.y - this.pointerStartCoord.y, 2)) || 0;
+      }
+
+      if (!this.hasImage()) {
+        var tabEnd = new Date().valueOf();
+
+        if (pointerMoveDistance < _core_const__WEBPACK_IMPORTED_MODULE_1__["CLICK_MOVE_THRESHOLD"] && tabEnd - this.tabStart < _core_const__WEBPACK_IMPORTED_MODULE_1__["MIN_MS_PER_CLICK"] && this.supportTouch) {
+          this.chooseFile();
+        }
+
+        this.tabStart = 0;
+        return;
+      }
+
+      this.$_c_checkBounceness();
+      this.dragging = false;
+      this.pinching = false;
+      this.pinchDistance = 0;
+      this.lastMovingCoord = null;
+      this.pointerMoved = false;
+      this.pointerStartCoord = null;
+    },
+    $_c_handlePointerMove: function $_c_handlePointerMove(evt) {
+      var _this = this;
+
+      this.emitNativeEvent(evt);
+      this.pointerMoved = true;
+      if (!this.hasImage()) return;
+      var coord = _core_util__WEBPACK_IMPORTED_MODULE_0__["default"].getPointerCoords(evt, this);
+      this.currentPointerCoord = coord;
+      evt.preventDefault();
+
+      if (!evt.touches || evt.touches.length === 1) {
+        if (!this.dragging) return;
+
+        if (this.lastMovingCoord) {
+          this.move({
+            x: coord.x - this.lastMovingCoord.x,
+            y: coord.y - this.lastMovingCoord.y
+          });
+        }
+
+        this.lastMovingCoord = coord;
+      }
+
+      if (evt.touches && evt.touches.length === 2) {
+        if (!this.pinching) return;
+        var distance = _core_util__WEBPACK_IMPORTED_MODULE_0__["default"].getPinchDistance(evt, this);
+        var delta = distance - this.pinchDistance;
+        this.zoom(delta > 0, _core_const__WEBPACK_IMPORTED_MODULE_1__["PINCH_ACCELERATION"]);
+        this.pinchDistance = distance;
+        this.$nextTick(function () {
+          _this.$_c_handleZoomWheel();
+        });
+      }
+    },
+    $_c_handlePointerLeave: function $_c_handlePointerLeave(evt) {
+      this.emitNativeEvent(evt);
+      this.currentPointerCoord = null;
+    },
+    $_c_handleWheel: function $_c_handleWheel(evt) {
+      var _this2 = this;
+
+      this.emitNativeEvent(evt);
+      if (!this.hasImage()) return;
+      evt.preventDefault();
+      this.scrolling = true;
+
+      if (evt.wheelDelta < 0 || evt.deltaY > 0 || evt.detail > 0) {
+        this.zoom(false);
+      } else if (evt.wheelDelta > 0 || evt.deltaY < 0 || evt.detail < 0) {
+        this.zoom(true);
+      }
+
+      this.$nextTick(function () {
+        _this2.$_c_handleZoomWheel();
+
+        _this2.scrolling = false;
+      });
+    },
+    $_c_handleDragEnter: function $_c_handleDragEnter(evt) {
+      this.emitNativeEvent(evt);
+      if (!_core_util__WEBPACK_IMPORTED_MODULE_0__["default"].eventHasFile(evt)) return;
+      if (this.hasImage()) return;
+      this.fileDraggedOver = true;
+    },
+    $_c_handleDragLeave: function $_c_handleDragLeave(evt) {
+      this.emitNativeEvent(evt);
+      if (!this.fileDraggedOver || !_core_util__WEBPACK_IMPORTED_MODULE_0__["default"].eventHasFile(evt)) return;
+      this.fileDraggedOver = false;
+    },
+    $_c_handleDragOver: function $_c_handleDragOver(evt) {
+      this.emitNativeEvent(evt);
+    },
+    $_c_handleDrop: function $_c_handleDrop(evt) {
+      this.emitNativeEvent(evt);
+      if (!this.fileDraggedOver || !_core_util__WEBPACK_IMPORTED_MODULE_0__["default"].eventHasFile(evt)) return;
+
+      if (this.hasImage()) {
+        return;
+      }
+
+      this.fileDraggedOver = false;
+      var file;
+      var dt = evt.dataTransfer;
+      if (!dt) return;
+
+      if (dt.items) {
+        for (var i = 0, len = dt.items.length; i < len; i += 1) {
+          var item = dt.items[i];
+
+          if (item.kind === 'file') {
+            file = item.getAsFile();
+            break;
+          }
+        }
+      } else {
+        file = dt.files[0];
+      }
+
+      if (file) {
+        this.$_c_onNewFileIn(file);
+      }
+    },
+    $_c_handleClick: function $_c_handleClick(evt) {
+      this.emitNativeEvent(evt);
+
+      if (!this.hasImage() && !this.supportTouch) {
+        this.chooseFile();
+      }
+    },
+    $_c_handleDblClick: function $_c_handleDblClick(evt) {
+      this.emitNativeEvent(evt);
+    },
+    $_c_handleInputChange: function $_c_handleInputChange() {
+      var input = this.$refs.fileInput;
+      if (!input.files.length) return;
+      var file = input.files[0];
+      this.$_c_onNewFileIn(file);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/image.js":
+/*!********************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/image.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core/util */ "./resources/js/instagram-cropper/core/util.js");
+/* harmony import */ var _core_events__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/events */ "./resources/js/instagram-cropper/core/events.js");
+/* harmony import */ var _lib_debounce__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/debounce */ "./resources/js/instagram-cropper/lib/debounce.js");
+/* harmony import */ var _lib_deepClone__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/deepClone */ "./resources/js/instagram-cropper/lib/deepClone.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    /**
+     * Set's image via the src-prop.
+     * Image can be an URL or an object.
+     * We need to debounce, so that the next image
+     * is rendered correctly
+     */
+    $_c_setImage: Object(_lib_debounce__WEBPACK_IMPORTED_MODULE_2__["default"])(function setImage() {
+      var inital = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+      if (typeof this.src === 'string') {
+        this.$_c_setImageViaUrl(inital);
+        return;
+      } // Due to the validator of value, we can assume the properties are correct
+
+
+      if (this.src && _typeof(this.src) === 'object') {
+        this.$_c_setImageViaObject(inital);
+        return;
+      }
+
+      this.$_c_setPlaceholders();
+      this.$_c_reset_values();
+    }, 30),
+    $_c_setImageViaUrl: function $_c_setImageViaUrl(initial) {
+      var _this = this;
+
+      var img = new Image();
+      var href = this.src;
+
+      if (!/^data:/.test(href) && !/^blob:/.test(href)) {
+        img.setAttribute('crossOrigin', 'anonymous');
+      }
+
+      if (this.forceCacheBreak) {
+        var src = new URL(this.src);
+        src.searchParams.append('cors', Date.now());
+        href = src.href;
+      }
+
+      img.src = href;
+
+      if (_core_util__WEBPACK_IMPORTED_MODULE_0__["default"].imageLoaded(img)) {
+        this.$_c_onload(img, +img.dataset.exifOrientation, initial, true);
+      } else {
+        this.loading = true;
+        this.$_c_paintBackground();
+
+        img.onload = function () {
+          _this.$_c_onload(img, +img.dataset.exifOrientation, initial, true);
+        };
+
+        img.onerror = function () {
+          _this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_1__["default"].IMAGE_ERROR_EVENT);
+
+          img = new Image();
+          img.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 600 600\'%3E%3Cpath fill=\'%23fff\' d=\'M0 0H600V600H0z\'/%3E%3Cpath d=\'M231.17 366.43a15.88 15.88 0 0 1-15.88-15.88v-95.31a15.88 15.88 0 0 1 15.88-15.88h137.66a15.89 15.89 0 0 1 15.89 15.88v95.31a15.89 15.89 0 0 1-15.89 15.88zm2.65-90a18.53 18.53 0 1 0 18.53-18.53 18.52 18.52 0 0 0-18.53 18.52zm129.72 68.83v-37.07l-29-29a4 4 0 0 0-5.62 0l-44.84 44.84-18.33-18.33a4 4 0 0 0-5.62 0l-23.67 23.67v15.88z\' fill=\'%23252525\'/%3E%3Cpath d=\'M169.39 219.53a6.66 6.66 0 0 1-1.17-9.34l8.18-10.52a6.66 6.66 0 0 1 9.35-1.17l244.86 189.25a6.68 6.68 0 0 1 1.17 9.35l-8.18 10.51a6.66 6.66 0 0 1-9.35 1.17z\' fill=\'%23b1605f\'/%3E%3C/svg%3E';
+
+          img.onload = function () {
+            _this.$_c_onload(img, +img.dataset.exifOrientation, initial, true);
+          };
+        };
+      }
+    },
+    $_c_setImageViaObject: function $_c_setImageViaObject(initial) {
+      var _this2 = this;
+
+      var src = Object(_lib_deepClone__WEBPACK_IMPORTED_MODULE_3__["default"])(this.src); // can't be cloned
+
+      var img = this.src.img;
+      this.naturalHeight = img.naturalHeight;
+      this.naturalWidth = img.naturalWidth;
+      this.imageSet = true;
+      this.skipScaleRatio = true;
+      this.img = img;
+      this.imgData = src.imgData; // Needed to trick the $Watcher with OldVal out.
+
+      this.$nextTick(function () {
+        _this2.imgData = src.imgData;
+        _this2.scaleRatio = src.scaleRatio;
+        _this2.skipScaleRatio = false;
+
+        _this2.$_c_checkBounceness();
+
+        if (initial) {
+          _this2.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_1__["default"].INITIAL_IMAGE_LOADED_EVENT);
+        }
+      });
+      this.scaleRatio = src.scaleRatio;
+    },
+    $_c_onload: function $_c_onload(img) {
+      var _this3 = this;
+
+      var orientation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+      var initial = arguments.length > 2 ? arguments[2] : undefined;
+      var keepAspect = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+      if (this.imageSet) {
+        this.remove(_core_events__WEBPACK_IMPORTED_MODULE_1__["default"].IMAGE_REMOVE_ONLOAD_EVENT);
+      }
+
+      this.img = img;
+
+      if (orientation > 1) {
+        if (!this.img) return;
+        var tempImg = _core_util__WEBPACK_IMPORTED_MODULE_0__["default"].getRotatedImage(this.img, orientation);
+
+        tempImg.onload = function () {
+          _this3.img = tempImg;
+
+          _this3.$_c_placeImage(keepAspect);
+        };
+      } else {
+        this.$_c_placeImage(keepAspect);
+      }
+
+      if (initial) {
+        this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_1__["default"].INITIAL_IMAGE_LOADED_EVENT);
+      }
+    },
+    $_c_placeImage: function $_c_placeImage(keepAspect) {
+      if (!this.img) return;
+      var imgData = this.imgData;
+      this.naturalWidth = this.img.naturalWidth;
+      this.naturalHeight = this.img.naturalHeight;
+      imgData.startX = _core_util__WEBPACK_IMPORTED_MODULE_0__["default"].numberValid(imgData.startX) ? imgData.startX : 0;
+      imgData.startY = _core_util__WEBPACK_IMPORTED_MODULE_0__["default"].numberValid(imgData.startY) ? imgData.startY : 0;
+
+      if (this.preventWhiteSpace) {
+        this.$_c_aspectFill();
+      } else if (!this.imageSet) {
+        // This part is important, when you load your own images from your server.
+        // Usually the aspectRatio is perfectly set and you don't want to change it.
+        // For example if you are loading the image via URL src
+        // and you don't want to change the aspect ratio
+        if (keepAspect && !this.greaterThanMaximumAspectRatio && !this.smallerThanMinimumAspectRatio) {
+          this.$_c_aspectFit();
+        } else {
+          this.$_c_aspectFill();
+        }
+      } else {
+        // Called in $_c_onDimensionChange
+        this.imgData.width = this.naturalWidth * this.scaleRatio;
+        this.imgData.height = this.naturalHeight * this.scaleRatio;
+      }
+
+      this.move({
+        x: 0,
+        y: 0
+      });
+      this.$_c_draw();
+    },
+    $_c_aspectFit: function $_c_aspectFit() {
+      var _this4 = this;
+
+      var imgWidth = this.naturalWidth;
+      var imgHeight = this.naturalHeight;
+      var scaleRatio;
+      this.skipScaleRatio = true; // image is wider than canvas
+
+      if (this.aspectRatio > this.canvasRatio) {
+        if (this.greaterThanMaximumAspectRatio) {
+          this.imgData.height = this.outputWidth / this.maximumAspectRatio;
+          this.imgData.width = this.imgData.height / imgHeight * imgWidth;
+          this.$_c_bounceTopCenter();
+          this.$_c_bounceLeftCenter();
+        } else {
+          scaleRatio = imgWidth / this.outputWidth;
+          this.imgData.height = imgHeight / scaleRatio;
+          this.imgData.width = this.outputWidth;
+          this.$_c_bounceTopCenter();
+          this.$_c_bounceLeft();
+        }
+      } else if (this.smallerThanMinimumAspectRatio) {
+        this.imgData.width = this.outputHeight * this.minimumAspectRatio;
+        this.imgData.height = this.imgData.width / imgWidth * imgHeight;
+        this.$_c_bounceTopCenter();
+        this.$_c_bounceLeftCenter();
+      } else {
+        scaleRatio = imgHeight / this.outputHeight;
+        this.imgData.width = imgWidth / scaleRatio;
+        this.imgData.height = this.outputHeight;
+        this.$_c_bounceLeftCenter();
+        this.$_c_bounceTop();
+      }
+
+      this.$nextTick(function () {
+        _this4.skipScaleRatio = false;
+      });
+    },
+
+    /**
+     * Is like "cover". Fills ups the whole canvas
+     */
+    $_c_aspectFill: function $_c_aspectFill() {
+      var _this5 = this;
+
+      var imgWidth = this.naturalWidth;
+      var imgHeight = this.naturalHeight;
+      var scaleRatio;
+      this.skipScaleRatio = true;
+
+      if (this.aspectRatio > this.canvasRatio) {
+        scaleRatio = imgHeight / this.outputHeight;
+        this.imgData.width = imgWidth / scaleRatio;
+        this.imgData.height = this.outputHeight;
+        this.$_c_bounceLeftCenter();
+        this.$_c_bounceTop();
+      } else {
+        scaleRatio = imgWidth / this.outputWidth;
+        this.imgData.height = imgHeight / scaleRatio;
+        this.imgData.width = this.outputWidth;
+        this.$_c_bounceTopCenter();
+        this.$_c_bounceLeft();
+      }
+
+      this.$nextTick(function () {
+        _this5.skipScaleRatio = false;
+      });
+    },
+
+    /**
+     * That means the image is smaller than the canvas
+     */
+    $_c_imageIsFullyZoomedOut: function $_c_imageIsFullyZoomedOut() {
+      if (this.aspectRatio > this.canvasRatio) {
+        return this.imgData.width < this.outputWidth || this.greaterThanMaximumAspectCanvasRatio;
+      }
+
+      return this.imgData.height < this.outputHeight || this.smallerThanMinimumAspectCanvasRatio;
+    },
+
+    /**
+     * That means the image that the image is much more zoomed in.
+     * Like fully covered or even more zoomed in.
+     */
+    $_c_imageIsFullyZoomedIn: function $_c_imageIsFullyZoomedIn() {
+      if (this.aspectRatio > this.canvasRatio) {
+        return this.imgData.height >= this.outputHeight;
+      }
+
+      return this.imgData.width >= this.outputWidth;
+    },
+    $_c_imageReachedMaximumScale: function $_c_imageReachedMaximumScale() {
+      return this.scaleRatio >= this.maximumScaleRatio;
+    },
+    $_c_updateVModel: Object(_lib_debounce__WEBPACK_IMPORTED_MODULE_2__["default"])(function updateVModel() {
+      this.$emit('update', this.getMetadata());
+    }, 20)
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/initialize.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/initialize.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _lib_polyfills__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/polyfills */ "./resources/js/instagram-cropper/lib/polyfills.js");
+/* harmony import */ var _core_events__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/events */ "./resources/js/instagram-cropper/core/events.js");
+/* harmony import */ var _lib_Line__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/Line */ "./resources/js/instagram-cropper/lib/Line.js");
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_initialize: function $_c_initialize() {
+      this.canvas = this.$refs.canvas;
+      this.$_c_setSize();
+      this.canvas.style.backgroundColor = this.canvasColor;
+      this.ctx = this.canvas.getContext('2d');
+      this.$_c_setCtx();
+      this.line = new _lib_Line__WEBPACK_IMPORTED_MODULE_2__["default"](this.ctx);
+      this.img = null;
+      this.$refs.fileInput.value = '';
+      this.imageSet = false;
+      this.chosenFile = null;
+      this.$_c_setImage(true);
+      this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_1__["default"].INIT_EVENT, this);
+    },
+    $_c_setSize: function $_c_setSize() {
+      this.canvas.width = this.outputWidth;
+      this.canvas.height = this.outputHeight;
+      this.canvas.style.width = "".concat(this.realWidth, "px");
+      this.canvas.style.height = "".concat(this.realHeight, "px");
+    },
+    $_c_setCtx: function $_c_setCtx() {
+      this.ctx.imageSmoothingEnabled = true;
+      this.ctx.imageSmoothingQuality = 'high';
+      this.ctx.webkitImageSmoothingEnabled = true;
+      this.ctx.msImageSmoothingEnabled = true;
+      this.ctx.imageSmoothingEnabled = true;
+      this.ctx.strokeStyle = '#ffffff';
+    },
+    $_c_reset_values: function $_c_reset_values() {
+      this.img = null;
+      this.$refs.fileInput.value = '';
+      this.imgData = {
+        width: 0,
+        height: 0,
+        startX: 0,
+        startY: 0
+      };
+      this.orientation = 1;
+      this.scaleRatio = null;
+      this.imageSet = false;
+      this.chosenFile = null;
+      this.$emit('input', null);
+    }
+  },
+  mounted: function mounted() {
+    this.$_c_autoSizingInit();
+    this.$_c_initialize();
+    _lib_polyfills__WEBPACK_IMPORTED_MODULE_0__["default"].rAFPolyfill();
+    _lib_polyfills__WEBPACK_IMPORTED_MODULE_0__["default"].toBlobPolyfill();
+    var support = window.requestAnimationFrame && window.File && window.FileReader && window.FileList && window.Blob;
+
+    if (typeof window === 'undefined' || !support) {
+      console.warn('Your browser does not support vue-croppa functionality.');
+    }
+  },
+  beforeDestroy: function beforeDestroy() {
+    this.$_c_autoSizingRemove();
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/layer/ruleofthirdGrid.js":
+/*!************************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/layer/ruleofthirdGrid.js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * Adds a rule of third grid
+ */
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_drawRuleOfThirdGrid: function $_c_drawRuleOfThirdGrid() {
+      var wi = this.$_c_ROTWidth();
+      var hi = this.$_c_ROTHeight();
+      this.$_c_drawROTFromTopToDown(wi, hi);
+      this.$_c_drawROTFromLeftToRight(wi, hi);
+    },
+    $_c_ROTWidth: function $_c_ROTWidth() {
+      if (this.imgData.startX >= 0) {
+        if (this.outputWidth < this.imgData.startX + this.imgData.width) {
+          return this.outputWidth - this.imgData.startX;
+        }
+
+        return this.imgData.width;
+      }
+
+      if (this.outputWidth < this.imgData.startX + this.imgData.width) {
+        return this.outputWidth;
+      }
+
+      return this.imgData.startX + this.imgData.width;
+    },
+    $_c_ROTHeight: function $_c_ROTHeight() {
+      if (this.imgData.startY >= 0) {
+        if (this.outputHeight < this.imgData.startY + this.imgData.height) {
+          return this.outputHeight - this.imgData.startY;
+        }
+
+        return this.imgData.height;
+      }
+
+      if (this.outputHeight < this.imgData.startY + this.imgData.height) {
+        return this.outputHeight;
+      }
+
+      return this.imgData.startY + this.imgData.height;
+    },
+    $_c_drawROTFromTopToDown: function $_c_drawROTFromTopToDown(wi, hi) {
+      var x0 = this.imgData.startX < 0 ? 0 : this.imgData.startX;
+      var y0 = this.imgData.startY < 0 ? 0 : this.imgData.startY;
+      var deltaX = wi / 3;
+      this.line.x1 = x0 + deltaX;
+      this.line.y1 = y0;
+      this.line.x2 = this.line.x1;
+      this.line.y2 = y0 + hi;
+      this.line.draw();
+      this.line.x1 = x0 + 2 * deltaX;
+      this.line.y1 = y0;
+      this.line.x2 = this.line.x1;
+      this.line.y2 = y0 + hi;
+      this.line.draw();
+    },
+    $_c_drawROTFromLeftToRight: function $_c_drawROTFromLeftToRight(wi, hi) {
+      var x0 = this.imgData.startX < 0 ? 0 : this.imgData.startX;
+      var y0 = this.imgData.startY < 0 ? 0 : this.imgData.startY;
+      var deltaY = hi / 3;
+      this.line.x1 = x0;
+      this.line.y1 = y0 + deltaY;
+      this.line.x2 = x0 + wi;
+      this.line.y2 = this.line.y1;
+      this.line.draw();
+      this.line.x1 = x0;
+      this.line.y1 = y0 + 2 * deltaY;
+      this.line.x2 = x0 + wi;
+      this.line.y2 = this.line.y1;
+      this.line.draw();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/placeholder.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/placeholder.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core/const */ "./resources/js/instagram-cropper/core/const.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    $_c_setPlaceholders: function $_c_setPlaceholders() {
+      this.$_c_paintBackground();
+      this.$_c_setTextPlaceholder();
+    },
+    $_c_setTextPlaceholder: function $_c_setTextPlaceholder() {
+      var ctx = this.ctx;
+      ctx.textBaseline = 'middle';
+      ctx.textAlign = 'center';
+      var defaultFontSize = this.outputWidth * _core_const__WEBPACK_IMPORTED_MODULE_0__["DEFAULT_PLACEHOLDER_TAKEUP"] / this.placeholder.length;
+      var fontSize = !this.computedPlaceholderFontSize ? defaultFontSize : this.computedPlaceholderFontSize;
+      ctx.font = "".concat(fontSize, "px sans-serif");
+      ctx.fillStyle = this.placeholderColor;
+      ctx.fillText(this.placeholder, this.outputWidth / 2, this.outputHeight / 2);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/instagram-cropper/mixins/watches.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/instagram-cropper/mixins/watches.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core/util */ "./resources/js/instagram-cropper/core/util.js");
+/* harmony import */ var _core_events__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/events */ "./resources/js/instagram-cropper/core/events.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  watch: {
+    src: {
+      handler: function handler() {
+        this.$_c_setImage();
+      },
+      deep: true
+    },
+    outputWidth: function outputWidth() {
+      this.$_c_onDimensionChange();
+    },
+    outputHeight: function outputHeight() {
+      this.$_c_onDimensionChange();
+    },
+    preventWhiteSpace: function preventWhiteSpace(val) {
+      if (val) {
+        this.imageSet = false;
+      }
+
+      this.$_c_placeImage();
+    },
+    scaleRatio: function scaleRatio(val, oldVal) {
+      if (!this.img) return;
+      if (!_core_util__WEBPACK_IMPORTED_MODULE_0__["default"].numberValid(val)) return;
+      var x = 1;
+
+      if (_core_util__WEBPACK_IMPORTED_MODULE_0__["default"].numberValid(oldVal) && oldVal !== 0) {
+        x = val / oldVal;
+      }
+
+      var pos = this.currentPointerCoord || {
+        x: this.imgData.startX + this.imgData.width / 2,
+        y: this.imgData.startY + this.imgData.height / 2
+      };
+      this.imgData.width = this.naturalWidth * val;
+      this.imgData.height = this.naturalHeight * val;
+
+      if (!this.skipScaleRatio && this.imageSet) {
+        var offsetX = (x - 1) * (pos.x - this.imgData.startX);
+        var offsetY = (x - 1) * (pos.y - this.imgData.startY);
+        this.imgData.startX -= offsetX;
+        this.imgData.startY -= offsetY;
+      }
+
+      if (this.preventWhiteSpace) {
+        this.$_c_preventZoomingToWhiteSpace();
+        this.$_c_preventMovingToWhiteSpace();
+      }
+    },
+    'imgData.width': function imgDataWidth(val, oldVal) {
+      if (!_core_util__WEBPACK_IMPORTED_MODULE_0__["default"].numberValid(val)) return;
+      this.scaleRatio = val / this.naturalWidth;
+
+      if (this.hasImage()) {
+        if (Math.abs(val - oldVal) > val * (1 / 100000)) {
+          this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_1__["default"].ZOOM_EVENT);
+          this.$_c_draw();
+        }
+      }
+    },
+    'imgData.height': function imgDataHeight(val) {
+      if (!_core_util__WEBPACK_IMPORTED_MODULE_0__["default"].numberValid(val)) return;
+      this.scaleRatio = val / this.naturalHeight;
+    },
+    'imgData.startX': function imgDataStartX() {
+      if (this.hasImage()) {
+        this.$nextTick(this.$_c_draw);
+      }
+    },
+    'imgData.startY': function imgDataStartY() {
+      if (this.hasImage()) {
+        this.$nextTick(this.$_c_draw);
+      }
+    },
+    loading: function loading(val) {
+      if (val) {
+        this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_1__["default"].LOADING_START_EVENT);
+      } else {
+        this.emitEvent(_core_events__WEBPACK_IMPORTED_MODULE_1__["default"].LOADING_END_EVENT);
+      }
+    },
+    dragging: function dragging(bool) {
+      if (!bool) this.$nextTick(this.$_c_draw);
+    },
+    pinching: function pinching(bool) {
+      if (!bool) this.$nextTick(this.$_c_draw);
+    }
+  }
+});
 
 /***/ }),
 
