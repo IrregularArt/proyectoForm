@@ -5,12 +5,11 @@
 @section('nav')
 
 <ul class="brand-logo center">
-    <div class="input-field">
-       
-        <input id="icon_prefix" type="text" class="active form-control" placeholder="¿Que deseas buscar?">
-        
-      </div>
-    </ul>
+{{ Form::open(array('url' => 'buscar','method' => 'get', 'class' => 'form-inline')) }}
+    <input class="form-control mr-sm-2" type="text" name="query" placeholder="Buscar" autocomplete="off" >
+    <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+{{ Form::close() }}
+</ul>
 @endsection
 @section('contenido')
 
@@ -25,21 +24,21 @@
         <div class="carousel-item active">
           <img class="d-block w-100" src="{{ asset('img/2872988.jpg')}}" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
-            <a href="#">verduras</a>
+            <a href="buscar?query=verduras">verduras</a>
            
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="{{ asset('img/2872988.jpg')}}" alt="Second slide">
           <div class="carousel-caption d-none d-md-block">
-            <h5>carnes</h5>
+            <a href="buscar?query=carnes">carnes</a>
            
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="{{ asset('img/5901.jpg')}}" alt="Third slide">
           <div class="carousel-caption d-none d-md-block">
-            <h5>granos</h5>
+            <a href="buscar?query=granos">granos</a>
            
           </div>
         </div>

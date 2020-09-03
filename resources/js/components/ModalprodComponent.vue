@@ -155,15 +155,28 @@ export default {
             })
             .then(response => {
                 
+                // Swal.fire({
+                //     icon: "success",
+                //     title:
+                //         "El producto ha sido actualizado.",
+                //     showConfirmButton: true,
+                //     timer: 1500
+                // });
                 Swal.fire({
-                            icon: "success",
-                            title:
-                                "El producto ha sido actualizado.",
-                            showConfirmButton: true,
-                            timer: 1500
-                        });
-                $('#myModal').modal('hide');  
-                this.$emit('actualizar');
+                    title: 'El producto ha sido actualizado',
+                    icon: 'success',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'listo!',
+                    allowOutsideClick: false,
+                    }).then((result) => {
+                    if (result.value) {
+                        window.location.reload();
+                    }
+                })
+                //$('#myModal').modal('hide');  
+               // this.$emit('actualizar');
+               
                // console.log(response);
             })
             .catch(function (error) {

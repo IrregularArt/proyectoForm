@@ -41,6 +41,11 @@ Route::get('/obtenerGaleria/{id}', 'ProductController@show')->middleware('auth')
 Route::post('/eliminarProducto', 'ProductController@destroy')->middleware('auth');
 Route::post('/actualizarProducto', 'ProductController@update')->middleware('auth');
 
+//buscar
+
+Route::get('buscar','ProductController@buscar');
+Route::get('infoLocal/{id}', 'LocalController@show');
+Route::get("local/{id}", "LocalController@index");
 /*Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/

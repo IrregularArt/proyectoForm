@@ -2053,6 +2053,8 @@ __webpack_require__.r(__webpack_exports__);
             text: "Algo salío mal al actualizar tus datos"
           });
         }); // console.log(this.datosLocal);
+      } else {
+        window.location.reload();
       }
 
       this.ver = true;
@@ -2522,8 +2524,6 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     actualizarProducto: function actualizarProducto() {
-      var _this2 = this;
-
       this.product_image = this.$refs.icrop.generateDataUrl();
       axios.post('/actualizarProducto', {
         product_image: this.product_image,
@@ -2533,16 +2533,27 @@ __webpack_require__.r(__webpack_exports__);
         tags: $("#tags").val(),
         product_id: this.product_id
       }).then(function (response) {
+        // Swal.fire({
+        //     icon: "success",
+        //     title:
+        //         "El producto ha sido actualizado.",
+        //     showConfirmButton: true,
+        //     timer: 1500
+        // });
         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
-          icon: "success",
-          title: "El producto ha sido actualizado.",
-          showConfirmButton: true,
-          timer: 1500
-        });
-        $('#myModal').modal('hide');
-
-        _this2.$emit('actualizar'); // console.log(response);
-
+          title: 'El producto ha sido actualizado',
+          icon: 'success',
+          showCancelButton: false,
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'listo!',
+          allowOutsideClick: false
+        }).then(function (result) {
+          if (result.value) {
+            window.location.reload();
+          }
+        }); //$('#myModal').modal('hide');  
+        // this.$emit('actualizar');
+        // console.log(response);
       })["catch"](function (error) {
         console.log("error al actualizar");
       });

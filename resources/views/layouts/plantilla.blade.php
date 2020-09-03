@@ -52,14 +52,14 @@
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                               
+                              <a class="dropdown-item" href="/home">Ver mi local</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                 {{ __('cerrar sesion') }}
-                            </a>
-                              <a class="dropdown-item" href="/home">Ver mi local</a>
-                              <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="#">Something else here</a>
+                                </a>
                             </div>
                           </li>
                             

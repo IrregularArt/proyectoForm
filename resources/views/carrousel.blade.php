@@ -8,7 +8,7 @@
     <div class="input-field" style="display: flex;">
         <i><img src="{{asset('img/lupa.png')}}" style="width: 50px;"></i>
         <input id="icon_prefix" type="text" class="active form-control" placeholder="¿Que deseas buscar?" style="margin-left: 10px;margin-top: 10px;">
-        
+        <button class="btn"></button>
       </div>
     </ul>
 @endsection

@@ -131,6 +131,8 @@ export default {
                         });
                     });
                 // console.log(this.datosLocal);
+            }else{
+                window.location.reload();
             }
             this.ver = true;
             this.ver1 = false;

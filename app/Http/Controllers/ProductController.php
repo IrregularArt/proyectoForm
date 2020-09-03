@@ -135,4 +135,13 @@ class ProductController extends Controller
         Product::where('id', '=', $request->idProducto)->delete();
         return "completado";
     }
+
+    public function buscar(Request $request){
+        $consulta = $request->get('query');
+
+        $productos = Product::where('tags','like',"%$consulta%")->orderBy('id', 'ASC')->get();
+        return view('busqueda',compact('productos'));
+    }
+
+    
 }

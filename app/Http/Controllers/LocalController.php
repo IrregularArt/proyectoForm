@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Local;
+use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -17,9 +19,12 @@ class LocalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index($id)
+    {   
+        $local = Local::where('id', '=', $id)->get();
+        $productos = Product::where("id_local", "=", $id )->get();
+        $datos = User::where('document', '=', $local[0]->document_user)->get();
+        return view("Local",compact('productos','local', 'datos'));
     }
 
     /*      buscar si tiene ya un local creado                 */
@@ -61,16 +66,22 @@ class LocalController extends Controller
         $nombre = session('document').'.png';
         $image->save(public_path().'/localesImg/'.$nombre);
     // guardar datos
+    if (str_contains($request->whatsapp, '(+57)') == false) {
+        $whatsapp = "(+57) ".$request->whatsapp;
+    }else{
+        $whatsapp = $request->whatsapp;
+    }
+        
         $local = new Local();
         $local->document_user = session('document');
         $local->phone = $request->telefono;
-        $local->whatsapp = $request->whatsapp;
+        $local->whatsapp = $whatsapp;
         $local->address	= $request->direccion;
         $local->other = $request->otros;
         $local->local_name = $request->nombreLocal;
         $local->local_img = $nombre;
         $local->save();
-        return url('home');
+        return redirect()->route('home');
     }
 
     /**
@@ -79,9 +90,12 @@ class LocalController extends Controller
      * @param  \App\Local  $local
      * @return \Illuminate\Http\Response
      */
-    public function show(Local $local)
+    public function show(Request $request)
     {
-        //
+        $info = Local::where('id','=', $request->id)
+                ->join('users','locals.document_user', '=', 'users.document')
+                ->get();
+        return $info;
     }
 
     /**
@@ -104,9 +118,14 @@ class LocalController extends Controller
      */
     public function update(Request $request, Local $local)
     {
+        if (str_contains($request->datos['whatsapp'], '(+57)') == false) {
+            $whatsapp = "(+57) ".$request->datos['whatsapp'];
+        }else{
+            $whatsapp = $request->datos['whatsapp'];
+        }
         Local::where('id', '=', $request->datos['id'])
             ->update(['phone' => $request->datos['phone'], 'local_name' => $request->datos['local_name'],
-            'whatsapp' => $request->datos['whatsapp'], 'address' => $request->datos['address'], 
+            'whatsapp' => $whatsapp, 'address' => $request->datos['address'], 
             'other' => $request->datos['other']]);
         return "completado";
     }
