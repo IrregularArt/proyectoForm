@@ -15,7 +15,7 @@
 @section('contenido')
 
  
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 55vw;margin-left: 22.5vw;margin-top: 2.7vh;margin-bottom: 3vh;">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 55vw !important;margin-left: 20vw !important;">
      
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

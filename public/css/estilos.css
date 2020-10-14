@@ -21,3 +21,14 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+
+.carousel-caption a {
+    font-size: 80px;
+    color: white;
+}
+
+.label-info{
+    color: white !important;
+}

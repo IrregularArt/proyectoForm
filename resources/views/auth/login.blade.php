@@ -4,8 +4,8 @@
 @endsection
 @section('contenido')
 
-<div style="margin-top: 4vh;margin-bottom: 5vh;">
-    <div class="col-8 offset-2 row" id="divimglog" style="padding: 0;height: 65vh;border: 1px solid; border-radius: 10px;">
+<div style="margin-top: 4vh;margin-bottom: 7vh;">
+    <div class="col-8 offset-2 row" id="divimglog" style="padding: 0;height: 63vh;border: 1px solid; border-radius: 10px;">
 
         <div class="col-6"  >
             

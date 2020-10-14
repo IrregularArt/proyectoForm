@@ -2,7 +2,7 @@
 <template>
     <div>
         <div class="card m-2 p-1 border-success bg-info" style="max-width: 22.72rem;">
-            <img class="card-img-top rounded" :src=img alt="Card image cap">
+            <img class="card-img-top rounded" :src=img alt="Card image cap" >
         
             <div class="card-body">
                 <h5 class="card-title">{{this.producto.product_name}}</h5>
@@ -13,7 +13,7 @@
                 <!-- ----------------------------------------------------------------------------- -->
             
                 <div  v-for="tag in etiquetas" :key="tag">
-                     <span class="label label-info p-1" style="color: #FFF;">{{ tag }}</span>
+                     <span class="label label-info p-1" style="color: #FFF;"> <i class="fas fa-tag"></i>{{ tag }}</span>
                 </div>
                 <!-- ----------------------------------------------------------------------------- -->
                 <a href="#" class=" btn btn-warning" v-on:click.prevent="editar()">editar</a>

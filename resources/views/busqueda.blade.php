@@ -53,8 +53,8 @@
       </div>
       
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        
       </div>
     </div>
   </div>
@@ -63,19 +63,23 @@
 <!----------------------------------->
     @if(count($productos) == 0)
 
-        <h4>No se encontraron productos con esta etiqueta</h4>
+        <h4 style="font-size: 80px; text-align: center; margin-top: 22vh; margin-bottom: 23vh;">No se encontraron productos con esta etiqueta</h4>
     @else
-        @foreach($productos as $producto)
-            <div class="card" style="width: 18rem;">
-        <img src="{{ 'productosImg/'.$producto->product_image}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{$producto->product_name}}</h5>
-            <p class="card-text">{{$producto->product_description}}</p>
-            <strong>Etiquetas:</strong>
-                @foreach($producto->tags as $tag)
-                    <label class="label label-info">{{ $tag->name}}</label>
-                @endforeach
-            <a onclick="mostrarProducto({{$producto}});" class="btn btn-primary">Ver producto</a>
+        <div style="display:-webkit-box ; overflow-x: scroll;">
+            @foreach($productos as $producto)
+            
+            <div class="card" style="width: 25rem; min-height: 80vh !important;">
+            <img src="{{ 'productosImg/'.$producto->product_image}}" class="card-img-top" alt="...">
+           
+            <div class="card-body">
+                <h5 class="card-title">{{$producto->product_name}}</h5>
+                <p class="card-text">{{$producto->product_description}}</p>
+                <strong>Etiquetas:</strong>
+                    @foreach($producto->tags as $tag)
+                        <label class="label label-info"><i class="fas fa-tag"></i>{{ $tag->name}}</label>
+                    @endforeach
+                <a onclick="mostrarProducto({{$producto}});" class="btn btn-primary">Ver producto</a>
+            </div>
         </div>
         
         @endforeach
@@ -94,7 +98,7 @@
             $("#imagenProducto").attr("src", 'productosImg/'+producto.product_image+'');
             $("#etiquetasP").empty();
             producto.tags.forEach(element => {
-                $("#etiquetasP").append('<label class="label p-1 m-1 label-info">'+element.name+'</label>');
+                $("#etiquetasP").append('<label class="label label-info"><i class="fas fa-tag"></i>'+element.name+'</label>');
             });
             $.get("infoLocal/"+producto.id_local, function(data, status){
                 $("#nombreVendedor").html(data[0].name);

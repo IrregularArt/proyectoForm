@@ -28,7 +28,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg " id="navbarprin">
-            <a href="{{url('/')}}" style="margin-rigth: 8px; color: white; font-size: 30px;" class="navbar-brand">MARKET PLACE</a>
+            <a href="{{url('/')}}" style="margin-rigth: 8px; color: white; font-size: 30px;" class="navbar-brand">TolSATA</a>
             
                 @yield('nav')
                 
@@ -92,17 +92,17 @@
 
                 <div class="col l2 s6" style="display: inline-flex;">
                     <i><img src="{{asset('img/facebook.png')}}" style="width: 40px;margin-top: 5vh;"></i>
-                    <h2 class="white-text" style="margin-top: 5vh;">MarketIbague</h2>
+                    <h2 class="white-text" style="margin-top: 5vh;">TolSATA</h2>
                 </div>
 
                 <div class="col l2 s6" style="display: inline-flex;">
                     <i><img src="{{asset('img/instagram.png')}}" style="width: 40px;margin-top: 5vh;"></i>
-                    <h2 class="white-text" style="margin-top: 5vh;">MarketIbague</h2>
+                    <h2 class="white-text" style="margin-top: 5vh;">TolSATA</h2>
                 </div>
 
                 <div class="col l2 s6" style="display: inline-flex;">
                     <i><img src="{{asset('img/whatsapp.png')}}" style="width: 40px;margin-top: 5vh;"></i>
-                    <h2 class="white-text" style="margin-top: 5vh;">MarketIbague</h2>
+                    <h2 class="white-text" style="margin-top: 5vh;">TolSATA</h2>
                 </div>
             </div>
         </footer>

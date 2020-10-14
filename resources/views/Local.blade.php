@@ -42,7 +42,7 @@
                 <h5><strong>Descripcion del producto:</strong></h5>
                 <p id="descripcion"></p>
                 <h6><strong>Etiquetas del producto:</strong></h6>
-                <div id="etiquetasP"></div>
+                <div id="etiquetasP" style="color: white;"></div>
                 <br>
                 
                 
@@ -52,8 +52,7 @@
       </div>
       
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
@@ -93,18 +92,18 @@
 
     </div> 
         
-    <div class="col-10 offset-1" style="background-color: #94c394;border-radius: 10px; margin-top: 5vh; margin-bottom: 5vh; border-radius: 10px;"> <!-- Parte de abajo -->
+    <div class="col-10 offset-1" style="background-color: #94c394;border-radius: 10px; margin-top: 5vh; margin-bottom: 5vh; border-radius: 10px; height: 75vh;"> <!-- Parte de abajo -->
         
-        <div style="overflow-y: scroll; height: 60vh;">
+        <div style="overflow-x: scroll; min-height: 80vh !important;display: -webkit-box">
         @foreach($productos as $producto)
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem;height: 75vh;">
             <img src="{{ asset('productosImg/'.$producto->product_image)}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{$producto->product_name}}</h5>
                 <p class="card-text">{{$producto->product_description}}</p>
                 <strong>Etiquetas:</strong>
                     @foreach($producto->tags as $tag)
-                        <label class="label label-info">{{ $tag->name}}</label>
+                        <label class="label label-info m-0"><i class="fas fa-tag"></i>{{ $tag->name}}</label>
                     @endforeach
                 <a onclick="mostrarProducto({{$producto}});" class="btn btn-primary">Ver producto</a>
             </div>
@@ -143,7 +142,7 @@
             $("#imagenProducto").attr("src", '../productosImg/'+producto.product_image+'');
             $("#etiquetasP").empty();
             producto.tags.forEach(element => {
-                $("#etiquetasP").append('<label class="label p-1 m-1 label-info">'+element.name+'</label>');
+                $("#etiquetasP").append('<label class="label label-info"><i class="fas fa-tag"></i>'+element.name+'</label>');
             });
            
             //$("#w3s").attr("href", "https://www.w3schools.com/jquery/");

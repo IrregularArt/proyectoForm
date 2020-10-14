@@ -45818,7 +45818,7 @@ var render = function() {
                     staticClass: "label label-info p-1",
                     staticStyle: { color: "#FFF" }
                   },
-                  [_vm._v(_vm._s(tag))]
+                  [_c("i", { staticClass: "fas fa-tag" }), _vm._v(_vm._s(tag))]
                 )
               ])
             }),
